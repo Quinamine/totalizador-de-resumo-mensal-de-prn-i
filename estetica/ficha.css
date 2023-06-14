@@ -1,0 +1,186 @@
+/* FORMATACAO GERAL */
+
+input, textarea {
+    border: none;
+    outline: none;
+    border-radius: 0;
+    color: var(--text-color);
+    font-family:  sans-serif, Arial, Helvetica !important; /* Coerção para Firefox */
+    font-size: 12px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+input[type=text], input[type=date],
+input[readonly] {
+    font-weight: bold;
+}
+
+input[type=text], input[type=date] {
+    font-size: 15px;
+}
+
+input[readonly] {
+    cursor: default;
+    transition: background-color 400ms ease-out;
+}
+
+input[readonly].bg-gray {
+    background-color: var(--gray-c) !important;
+}
+
+div.container input:focus {
+    border-bottom: 1px solid var(--blue) !important;
+}
+
+/* CSS REUTILIZÁVEL */ 
+
+/* INIT */
+
+div.container {
+    max-width: 1312px;
+    min-width: 1312px;
+    margin: 30px auto 10px auto;
+}
+
+@media print {
+    div.container {
+        margin-top: 20px;
+        visibility: visible;
+    }
+}
+
+div.container input[type=number] {
+    text-align: center;
+    padding: 1px;
+}
+
+div.container input[type=number].fundo-vermelho {
+    background-color: var(--danger-color) !important;
+    color: var(--yt);
+}
+
+div.container input[readonly] {
+    font-weight: bold;
+    cursor: default;
+    transition: background-color 400ms ease-out;
+}
+
+div.container input[readonly].bg-gray {
+    background-color: var(--gray-c);
+}
+
+div.container input[type=number].nao-aplicavel {
+    background-color: var(--gray) !important;
+}
+
+/* CABECALHO DA FICHA */
+
+div.republica-e-misau {
+    text-align: center;
+}
+
+div.republica-e-misau span {
+    display: block;
+    font-weight: 700;
+}
+
+div.container h1 {
+    text-transform: uppercase;
+}
+
+div.container div.geo {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    background-color: #ccc;
+    text-transform: uppercase;
+}
+
+div.geo div.geo-col {
+    display: grid;
+    grid-template-rows: 32px;
+}
+
+div.geo div.geo-col.col1 {
+    border-right: 2px solid var(--border-color);
+}
+div.geo-col div {
+    padding: 8px 0 4px 0;
+    border-bottom: 2px solid var(--border-color);
+    display: flex;
+    justify-content: flex-end;
+}
+
+div.geo-col div:last-child {
+    border-bottom: none;
+}
+
+div.geo-col label {
+    font-weight: 700;
+    color: #666;
+}
+
+div.geo-col input {
+    flex-basis: 320px;
+    padding: 0 3px;
+    background-color: inherit;
+}
+/* FICHA */
+
+/* Header */
+div.ficha {
+    font-size: 14px;
+}
+
+div.ficha header {
+    display: grid;
+    grid-template-columns: 175px 75px calc(75px*3) 120px calc(75px*6) repeat(2, 120px);
+    margin-top: 15px;
+}
+
+div.ficha header > div {
+    border-right: 2px solid var(--border-color);
+    text-align: center;
+}
+
+div.ficha header div.admissoes {
+    display: grid;
+    grid-template-columns: 75px 140px;
+    grid-template-rows: 20px;
+}
+
+div.admissoes div.col1 {
+    grid-column: 1/3;
+}
+
+div.admissoes div.col3 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 20px 1fr;
+}
+
+div.admissoes div.col3 span:first-child {
+    grid-column: 1/3;
+}
+div.ficha header span {
+    text-align: center;
+}
+
+/* SECCAO C - SAIDAS */
+div.ficha header div.saidas {
+    display: grid;
+    grid-template-columns: repeat(6, 75px);
+}
+
+/* SECCAO C - SAIDAS */
+div.ficha div.saidas div:first-child {
+    grid-column: 1/7;
+}
