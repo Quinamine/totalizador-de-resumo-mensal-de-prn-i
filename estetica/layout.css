@@ -37,7 +37,7 @@ html {
 
 body {
     font-family: sans-serif, Arial, Helvetica !important;
-    font-size: 15px;
+    font-size: 14px;
     color: var(--text-color);
     min-height: 100vh;
     display: flex;
