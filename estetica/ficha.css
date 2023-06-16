@@ -6,7 +6,7 @@ input, textarea {
     border-radius: 0;
     color: var(--text-color);
     font-family:  sans-serif, Arial, Helvetica !important; /* Coerção para Firefox */
-    font-size: 12px;
+    font-size: 14px;
 }
 
 input::-webkit-outer-spin-button,
@@ -30,15 +30,15 @@ input[type=text], input[type=date] {
 
 input[readonly] {
     cursor: default;
-    transition: background-color 400ms ease-out;
-}
-
-input[readonly].bg-gray {
-    background-color: var(--gray-c) !important;
+    background-color: var(--gray-c);
 }
 
 div.container input:focus {
-    border-bottom: 1px solid var(--blue) !important;
+    border-bottom: 2px solid var(--blue) !important;
+}
+
+div.container input[readonly]:focus {
+    border-bottom: 2px solid var(--border-color) !important;
 }
 
 /* CSS REUTILIZÁVEL */ 
@@ -47,7 +47,6 @@ div.container input:focus {
 }
 
 /* INIT */
-
 div.container {
     max-width: 1290px;
     min-width: 1290px;
@@ -62,7 +61,7 @@ div.container {
     }
 }
 
-div.container input[type=number] {
+div.container div.ficha input[type=number] {
     text-align: center;
     padding: 1px;
 }
@@ -98,12 +97,16 @@ div.republica-e-misau span {
 
 div.container h1 {
     text-transform: uppercase;
+    font-weight: initial;
+    font-size: 22px;
+    text-align: center;
+    margin: 15px 0;
 }
 
 div.container div.geo {
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    background-color: #ccc;
+    background-color: var(--gray-c);
     text-transform: uppercase;
 }
 
@@ -116,10 +119,11 @@ div.geo div.geo-col.col1 {
     border-right: 2px solid var(--border-color);
 }
 div.geo-col div {
-    padding: 8px 0 4px 0;
+    min-height: 32px;
     border-bottom: 2px solid var(--border-color);
     display: flex;
     justify-content: flex-end;
+    align-items: center;
 }
 
 div.geo-col div:last-child {
@@ -135,20 +139,27 @@ div.geo-col input {
     flex-basis: 320px;
     padding: 0 3px;
     background-color: inherit;
+    height: 100%;
+    border-bottom: 2px solid transparent;
+    font-weight: bold;
+}
+
+div.geo-col input[type=number] {
+    font-size: 14.5px;
 }
 /* FICHA */
 
 /* Header */
 div.ficha {
     font-size: 13.5px;
+    color: #555;
 }
 
 div.ficha header {
     display: grid;
     grid-template-columns: 175px 75px calc(75px*3) 138px calc(80px*5) repeat(2, 138px);
     margin-top: 15px;
-    background-color: #ddd;
-    color: #555;
+    background-color: var(--gray-c);
 }
 
 div.ficha header > div {
@@ -246,7 +257,7 @@ div.body div.doentes-no-inicio {
 }
 
 div.body div.doentes-no-inicio input {
-    background-color: #eee;
+    background-color: var(--gray-c);
 }
 
 div.body div.total-de-doentes-que-transitam {
@@ -256,7 +267,7 @@ div.body div.total-de-doentes-que-transitam {
 /* Input maxwidth */
 
 div.ficha input {
-    width: calc(100% - 6px);
+    width: calc(100% - 4px);
 }
 
 /** Footer da ficha **/
@@ -265,7 +276,7 @@ div.ficha input {
 
 div.ficha footer {
     display: grid;
-    grid-template-columns: 613px 77px repeat(3, 75px) 98px;
+    grid-template-columns: 613px 77px repeat(3, 75px) 100px;
 }
 
 footer.da-ficha > div {
@@ -273,7 +284,25 @@ footer.da-ficha > div {
     grid-template-rows: repeat(3, 30px);
 }
 
-footer.da-ficha div:nth-child(n+2) span {
-    background-color: #ddd;
+footer.da-ficha > div:first-child span {
+    justify-content: flex-end;
 }
+
+footer.da-ficha > div:last-child {
+    border-right: 2px solid var(--border-color);
+}
+
+footer.da-ficha span,
+footer.da-ficha input {
+    align-items: center !important;
+    border-bottom: 2px solid var(--border-color);
+    border-left: 2px solid var(--border-color);
+}
+
+footer.da-ficha div:nth-child(n+2) span,
+span.gray-bg {
+    background-color: var(--gray-c);
+}
+
+
 
