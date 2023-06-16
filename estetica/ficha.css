@@ -158,6 +158,9 @@ div.ficha header > div {
     text-align: center;
 }
 
+div.ficha header > div:last-child {
+    border-right: 2px solid var(--border-color);
+}
 div.ficha header div.admissoes {
     display: grid;
     grid-template-columns: 75px calc(75px*2);
@@ -217,7 +220,7 @@ div.ficha div.saidas div:first-child {
 
 div.body {
     display: grid;
-    grid-template-columns: 175px repeat(2, 75px) repeat(2, 74px) 138px repeat(4, 75px) 82px repeat(2, 38px);
+    grid-template-columns: 175px 75px 77px 76px 72px 138px 77px repeat(3, 75px) 98px repeat(2, 138px);
 }
 
 div.body input {
@@ -242,7 +245,35 @@ div.body div.doentes-no-inicio {
     grid-template-columns: 75px;
 }
 
-div.doentes-no-inicio input,
-div.casos-novos input {
-    max-width: 75px;
+div.body div.doentes-no-inicio input {
+    background-color: #eee;
 }
+
+div.body div.total-de-doentes-que-transitam {
+    border-right: 2px solid var(--border-color);
+}
+
+/* Input maxwidth */
+
+div.ficha input {
+    width: calc(100% - 6px);
+}
+
+/** Footer da ficha **/
+/* grid-template-columns: 175px 75px 77px 76px 72px 138px 77px repeat(3, 75px) 98px repeat(2, 138px);
+}*/
+
+div.ficha footer {
+    display: grid;
+    grid-template-columns: 613px 77px repeat(3, 75px) 98px;
+}
+
+footer.da-ficha > div {
+    display: grid;
+    grid-template-rows: repeat(3, 30px);
+}
+
+footer.da-ficha div:nth-child(n+2) span {
+    background-color: #ddd;
+}
+
