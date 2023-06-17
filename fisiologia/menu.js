@@ -1,70 +1,11 @@
 "use strict";
 
 const menu = {
-    destacarFundoDeTotais() {
-        for (const cel of readonlyCels) {
-            readonlyCelsDarker.checked ? 
-                cel.classList.add("bg-gray") : 
-                cel.classList.remove("bg-gray");
-
-        }
-    },
-
-    // IR PARA
-    mostrarCaixaDePesquisa() {
-        srcContainer.classList.add("on");
-        srcInput.focus();
-        srcInput.select();
-    },
-
-    omitirCaixaDePesquisa() {
-        srcContainer.classList.remove("on");
-        srcInput.value = "";
-        this.resetarFundoDoNumeroDaLinha();
-    },
-
-    pesquisarLinha(numLinha) {
-
-        if(numLinha === "") {
-            this.resetarFundoDoNumeroDaLinha();
-            return false;
-        }
-        else if((numLinha < 1) || (numLinha > 63)) {
-            const alerta = document.querySelector("div.caixa-de-alerta.query-out-of-range");
-            alerta.querySelector("b.entered-num").textContent = numLinha;
-            alerta.classList.add("on");
-            srcInput.setAttribute("readonly", "");
-            desfoqueDoFundo.on();
-            this.resetarFundoDoNumeroDaLinha();
-        }
-
-        else {
-            let rowIndex = numLinha - 1;
-            
-            if ((rowNumbers[rowIndex].getBoundingClientRect().bottom < 0) || rowNumbers[rowIndex].getBoundingClientRect().top > window.innerHeight) {
-                if(rowIndex < 3) {
-                    const body = document.querySelector("body");
-                    body.scrollIntoView();
-                }
-                else {
-                    rowNumbers[rowIndex-3].scrollIntoView();
-                }
-            }
-            this.resetarFundoDoNumeroDaLinha();
-            rowNumbers[rowIndex].classList.add("fundo-laranja");
-        }
-    },
-
-    resetarFundoDoNumeroDaLinha() {
-        for (const row of rowNumbers) {
-            row.classList.remove("fundo-laranja");
-        }
-    },
 
     // ESVAZIAR A FICHA
     esvaziamento() {
         const confirmacao = document.querySelector("div.caixa-de-confirmacao");
-        const celulas = document.querySelectorAll("div.inputs-container input");
+        const celulas = document.querySelectorAll("div.body div.col input");
         return {
             mostrarCaixaDeConfirmacao: () => {
                 let celulasPreenchidas = 0;
@@ -92,7 +33,7 @@ const menu = {
 
                 for (let i = 0; i < celulas.length; i++) {
                     celulas[i].value = "";
-                    typeof(Storage) !== "undefined" && localStorage.removeItem(`trmsaaj-cel${i}`);
+                    typeof(Storage) !== "undefined" && localStorage.removeItem(`trmprni-cel${i}`);
                     inputValidation.adicionarOuRemoverFundoVermelho(celulas[i], "-");
                 };
 
@@ -103,7 +44,7 @@ const menu = {
                         const IdDoDadoAdicional = limpador.dataset.for; 
                         const dadoAdicional = document.querySelector(`#${IdDoDadoAdicional}`);
                         dadoAdicional.value = "";
-                        typeof(Storage) !== "undefined" && localStorage.removeItem(`trmsaaj-${IdDoDadoAdicional}`);
+                        typeof(Storage) !== "undefined" && localStorage.removeItem(`trmprni-${IdDoDadoAdicional}`);
 
                         // Eliminar o negrito deste elemento para o placeholder não ficar muito nítido
                         if(IdDoDadoAdicional === "nota") {
@@ -169,39 +110,22 @@ const desfoqueDoFundo = {
 }
 
 // DECLARAÇÃO E INICIALIZAÇÃO DAS VARIÁVEIS
-let readonlyCelsDarker, readonlyCels,
-srcContainer, srcInput, rowNumbers, 
-textArea,
-divDesfocante;
+ 
+let textArea, divDesfocante, readonlyCels;
 function init() {
-    readonlyCelsDarker = document.querySelector("#readonlyinputs-darker");
-    readonlyCels = document.querySelectorAll("input[readonly]");
-    srcContainer = document.querySelector("div.caixa-de-pesquisa");
-    srcInput = document.querySelector("div.caixa-de-pesquisa input.pesquisar-linha");
-    rowNumbers = document.querySelectorAll("div.coluna-de-numeros-das-linhas span")
     textArea = document.querySelector("textarea#nota");
     divDesfocante = document.querySelector("div.desfoque");
+    readonlyCels = document.querySelectorAll("input[readonly]");
 }
 
 // EVENTOS
 function eventListeners() {
-    // DESTACAR O FUNDO DOS TOTAIS
-    readonlyCelsDarker.addEventListener("change", () => menu.destacarFundoDeTotais());
-
-    // IR PARA LINHA...
-    const BtnIrPara = document.querySelector("button.ir-para");
-    const BtnFecharCaixaDePesquisa = document.querySelector("div.caixa-de-pesquisa button.fechar");
-    BtnIrPara.addEventListener("click", () => menu.mostrarCaixaDePesquisa());
-    BtnFecharCaixaDePesquisa.addEventListener("click", () => menu.omitirCaixaDePesquisa());
-    srcInput.addEventListener("keyup", () => menu.pesquisarLinha(srcInput.value));
 
     // FECHAR CAIXA DE ALERTA
     const btnsFecharAlerta = document.querySelectorAll("div.caixa-de-alerta button");
     for (const btn of btnsFecharAlerta) {
         btn.addEventListener("click", () => {
             btn.parentElement.classList.remove("on");
-            srcInput.removeAttribute("readonly"); // Para alerta de 'IR PARA LINHA...'
-			srcInput.select(); 
             desfoqueDoFundo.off();
         })
     }
@@ -210,17 +134,13 @@ function eventListeners() {
     readonlyCels.forEach ( cel => {
         cel.addEventListener("click", () => {
             if(cel.matches(".nao-aplicavel")) {
-            const alerta = document.querySelector("div.caixa-de-alerta.indicador-nao-aplicavel");
-            const sexoAQueNaoSeAplica = alerta.querySelector("span.sexo-output");
-
-            alerta.classList.add("on");
-            cel.parentElement.matches(".sexo-m") ?
-                sexoAQueNaoSeAplica.textContent = "masculino" : 
-                sexoAQueNaoSeAplica.textContent = "feminino";
-            } else {
-            document.querySelector("div.caixa-de-alerta.restricao-de-acesso-celular").classList.add("on");
-            }           
-            desfoqueDoFundo.on();
+                const alerta = document.querySelector("div.caixa-de-alerta.indicador-nao-aplicavel");
+            
+                alerta.classList.add("on");
+                document.querySelector("div.caixa-de-alerta.restricao-de-acesso-celular").classList.add("on");
+                    
+                desfoqueDoFundo.on();
+            }
         })
     });
 
@@ -286,9 +206,9 @@ function eventListeners() {
 
     // PARTILHAR
     let conteudo = {
-        title: "Totalizador de Resumo Mensal de SAAJ",
-        text: "O Totalizador de Resumo Mensal de SAAJ é um serviço online gratuito que auxilia na elaboração do resumo mensal de SAAJ, através do cálculo automático dos totais a partir dos dados inseridos pelo usuário (Profissional de Saúde).",
-        url: "https://www.quinamine.github.io/totalizador-de-resumo-mensal-de-saaj/index.html"
+        title: "Totalizador de Resumo Mensal de PRN I",
+        text: "O Totalizador de Resumo Mensal de PRN I é um serviço online gratuito que auxilia na elaboração do resumo mensal de PRN I, através do cálculo automático dos totais a partir dos dados inseridos pelo usuário (Profissional de Saúde).",
+        url: "https://www.quinamine.github.io/totalizador-de-resumo-mensal-de-prn-i/index.html"
     }
 
     const btnPartilhar = document.querySelector("button.partilhar");

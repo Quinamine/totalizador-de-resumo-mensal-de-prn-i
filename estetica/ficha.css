@@ -132,7 +132,7 @@ div.geo-col div:last-child {
 
 div.geo-col label {
     font-weight: 700;
-    color: #666;
+    color: var(--gray-6);
 }
 
 div.geo-col input {
@@ -152,7 +152,8 @@ div.geo-col input[type=number] {
 /* Header */
 div.ficha {
     font-size: 13.5px;
-    color: #555;
+    color: var(--gray-5);
+    margin-bottom: 15px;
 }
 
 div.ficha header {
@@ -252,6 +253,33 @@ div.ficha div.body span {
     border-bottom: 2px solid var(--border-color);
 }
 
+div.body div.grupos-etarios span {
+    position: relative;
+}
+
+div.grupos-etarios span::before {
+    font-size: 12px;
+    position: absolute;
+    left: -16px;
+    top: 2px;
+}
+
+div.grupos-etarios span:first-child::before {
+    content: "1";
+}
+
+div.grupos-etarios span:nth-child(2)::before {
+    content: "2";
+}
+
+div.grupos-etarios span:nth-child(4)::before {
+    content: "3";
+}
+
+div.grupos-etarios span:nth-child(5)::before {
+    content: "4";
+}
+
 div.body div.doentes-no-inicio {
     grid-template-columns: 75px;
 }
@@ -302,6 +330,47 @@ footer.da-ficha input {
 footer.da-ficha div:nth-child(n+2) span,
 span.gray-bg {
     background-color: var(--gray-c);
+}
+
+/* SECCAO DE NOTA */
+div.nota {
+    margin-bottom: 20px;
+    min-height: 93px;
+}
+
+@media screen and (max-width: 1312px) {
+    div.linha.nota {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
+
+div.nota textarea {
+    font: 14px Arial, Helvetica, san-serif;
+    min-width: 905px;
+    padding: 5px;
+    line-height: 1.5;
+    border: 1px solid var(--border-color);
+    min-height: 77px;
+}
+
+@media print {
+    div.nota.no-print {
+        display: none;
+    }
+
+    div.nota textarea {
+        padding: 0;
+    }
+}
+
+div.nota textarea.bold {
+    font-weight: bold;
+    border-color: transparent;
+}
+
+div.nota textarea:focus {
+    border: 2px solid var(--blue);
 }
 
 

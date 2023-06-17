@@ -4,9 +4,9 @@ const storage  = {
     salvarFicha() {
         for (let i = 0; i < inputCels.length; i++) {
             // Salvar
-            inputCels[i].addEventListener("input", () => localStorage.setItem(`trmsaaj-cel${i}`, `${inputCels[i].value}`));
+            inputCels[i].addEventListener("input", () => localStorage.setItem(`trmprni-cel${i}`, `${inputCels[i].value}`));
             // Restaurar
-            inputCels[i].value = localStorage.getItem(`trmsaaj-cel${i}`);
+            inputCels[i].value = localStorage.getItem(`trmprni-cel${i}`);
         }
     },
 
@@ -14,8 +14,8 @@ const storage  = {
         const dadosAdicionais = document.querySelectorAll("div.container input[type=text], input[type=date], textarea#nota");
 
         dadosAdicionais.forEach ( dado => {
-            dado.addEventListener("input", () => localStorage.setItem(`trmsaaj-${dado.id}`, `${dado.value}`));
-            dado.value = localStorage.getItem(`trmsaaj-${dado.id}`);
+            dado.addEventListener("input", () => localStorage.setItem(`trmprni-${dado.id}`, `${dado.value}`));
+            dado.value = localStorage.getItem(`trmprni-${dado.id}`);
 
             if(dado.matches("#nota")) {
                 let denegrirNota = () => dado.value !== "" ? dado.classList.add("bold") : dado.classList.remove("bold");
@@ -23,42 +23,30 @@ const storage  = {
                 denegrirNota(); // NO LOAD DO WINDOWS 
             }
         });
-    },
-
-    salvarDestaqueDeTotais() {
-        readonlyCelsDarker.addEventListener("change", () => {
-            readonlyCelsDarker.checked ?
-            localStorage.setItem("trmsaaj-destaque", "on") : 
-            localStorage.removeItem("trmsaaj-destaque");
-        });
-
-        // NO LOAD DO WINDOWS
-        if(localStorage.getItem("trmsaaj-destaque")) {
-            readonlyCelsDarker.setAttribute("checked", "");
-            menu.destacarFundoDeTotais();
-        }; 
     }
 }
 
 const totalizacao = {
     filtrarCelulas(cel) {
-        if((cel.dataset.totalparcial) && (cel.dataset.totalgeral)) {
-            cel.classList.add(`${cel.dataset.totalparcial}`);
-            cel.classList.add(`${cel.dataset.totalgeral}`);
+        if((cel.dataset.subtotaleixoy) && (cel.dataset.totaleixoy)) {
+            console.log("hello world")
+            cel.classList.add(`${cel.dataset.subtotaleixoy}`);
+            cel.classList.add(`${cel.dataset.totaleixoy}`);
             
-            let totalParcial = document.querySelectorAll(`.${cel.dataset.totalparcial}`),
-            totalParcialOutput = document.querySelector(`.${cel.dataset.totalparcialoutput}`),
-            totalGeral = document.querySelectorAll(`.${cel.dataset.totalgeral}`),
-            totalGeralOutput = document.querySelector(`.${cel.dataset.totalgeraloutput}`);
+          
+            let subtotaleixoy = document.querySelectorAll(`.${cel.dataset.subtotaleixoy}`),
+            subtotaleixoyOutput = document.querySelector(`.${cel.dataset.subtotaleixoyoutput}`),
+            totaleixoy = document.querySelectorAll(`.${cel.dataset.totaleixoy}`),
+            totaleixoyOutput = document.querySelector(`.${cel.dataset.totaleixoyoutput}`);
 
-            this.totalizarCelulas(totalParcial, totalParcialOutput);
-            this.totalizarCelulas(totalGeral, totalGeralOutput);
+            this.totalizarCelulas(subtotaleixoy, subtotaleixoyOutput);
+            this.totalizarCelulas(totaleixoy, totaleixoyOutput);
         }
 
-        if(cel.dataset.totalparcialnaoaplicaveloutput) {
-            let totalParcialNaoAplicavelOutput = document.querySelector(`.${cel.dataset.totalparcialnaoaplicaveloutput}`);
-            totalParcialNaoAplicavelOutput.value = 0;
-        }
+        /*if(cel.dataset.subtotaleixoynaoaplicaveloutput) {
+            let subtotaleixoyNaoAplicavelOutput = document.querySelector(`.${cel.dataset.subtotaleixoynaoaplicaveloutput}`);
+            subtotaleixoyNaoAplicavelOutput.value = 0;
+        }*/
     },
 
     totalizarCelulas(celulasPorTotalizar, celulaDeSaida) {
@@ -74,7 +62,7 @@ function escutarEventos() {
     // TOTALIZACAO
     inputCels.forEach( cel => {
         cel.addEventListener("input", () => totalizacao.filtrarCelulas(cel)); // T
-        cel.value != "" && totalizacao.filtrarCelulas(cel); // No Load do Windows
+        /*cel.value != "" && totalizacao.filtrarCelulas(cel); */// No Load do Windows
     });
 }
 
@@ -82,7 +70,6 @@ window.addEventListener("load", () => {
     if(typeof(Storage) !== "undefined") {
         storage.salvarFicha();
         storage.salvarDadosAdicionais();
-        storage.salvarDestaqueDeTotais();
     }
     escutarEventos();
 });

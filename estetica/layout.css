@@ -1,8 +1,8 @@
 /* FORMATAÇÕES GERAIS */
 :root {
-    --primary-color: #c0c5da;
+    --primary-color: #cccccc;
     --secondary-color: #6985a7;
-    --border-color: #888;
+    --border-color: #888888;
     --anchor-color: #1558bc;
     --text-color: #333333;
     --danger-color: #dd0000;
@@ -16,6 +16,8 @@
     --footer-bgc: var(--primary-color);
     --important-text-bgc: #f4f4f4;
     --gray: #888888;
+    --gray-5: #555555;
+    --gray-6: #666666;
     --gray-a: #aaaaaa;
     --gray-c: #cccccc;
     --gray-d: #dddddd;
@@ -47,12 +49,8 @@ body {
 
 @media print {
     @page {
-        margin: 0.5cm 0.5cm 1cm 0.5cm;
+        margin: 0.5cm;
         size: landscape;
-    }
-
-    @page :first {
-        margin-bottom: 0.5cm;
     }
     
     
@@ -72,7 +70,7 @@ main {
     background-color: var(--yt);
 }
 
-@media screen and (max-width: 1312px) {
+@media screen and (max-width: 1290px) {
     main {
         max-width: 100%;
         overflow: auto;
@@ -198,11 +196,11 @@ body > header {
 }
 
 div.linha {
-    max-width: 1312px;
+    max-width: 1290px;
     margin: 0 auto;
 }
 
-@media screen and (max-width: 1312px) {
+@media screen and (max-width: 1290px) {
     div.linha {
         padding-left: 15px;
         padding-right: 15px;
@@ -318,23 +316,18 @@ section.menu li label {
     padding: 10px 10px 10px 0;
 }
 
-section.menu li input[type=checkbox] {
-    width: 12px;
-    height: 11px;
-    margin: 1px 4px 3px 4px;
-}
 
 /* BOTÕES DO MENU */
 section.menu li button {
     background-color: inherit;
-    font-size: 12px;
+    font-size: 14px;
     display: inline-block;
     padding: 12px;
 }
 
 section.menu button {
     background-color: inherit;
-    font-size: 12px;
+    font-size: 14px;
     display: inline-block;
     padding: 12px;
 }
@@ -393,7 +386,7 @@ footer div.linha.do-rodape a.voltar {
     color: var(--gray);
 }
 
-@media screen and (max-width: 1312px) {
+@media screen and (max-width: 1290px) {
     footer div.linha.do-rodape a.voltar {
         right: 15px;
     }

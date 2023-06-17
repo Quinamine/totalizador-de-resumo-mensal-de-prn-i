@@ -27,8 +27,13 @@
         <script src="fisiologia/menu.js"></script>
         <script src="fisiologia/inputvalidation.js"></script>
         <script src="fisiologia/totalizador-rmprni.js"></script>
+       
+        <!-- 
+        
         <script src="fisiologia/referencia.js"></script>
         <script src="fisiologia/webstorage.js"></script>
+
+        -->
 		
 		<!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-FYM982DGXV"></script>
@@ -51,10 +56,7 @@
                     Totalizador de <span>Resumo</span> Mensal de PRN I
                 </a>                                        
                 <section class="menu" role="navigation">
-                    <ul>
-                        <li title="Migrar até uma determinada linha">
-                            <button class="ir-para">Ir&nbsp;para&nbsp;a&nbsp;linha...</button>
-                        </li>                             
+                    <ul>                            
                         <li title="Limpar os dados da ficha">
                             <button class="esvaziar-ficha">Esvaziar&nbsp;a&nbsp;ficha</button>
                         </li>
@@ -115,7 +117,7 @@
 
                             <!-- Data do Relatório -->
                             <div>
-                                <label for="data-do-relatorrio">Data do Relatório:</label>
+                                <label for="data-do-relatorio">Data do Relatório:</label>
                                 <input type="text" id="data-do-relatorio"/>
                             </div>
                         </div>
@@ -136,7 +138,7 @@
                             </div>
                             
                             <div>
-                                <label for="mes">Mês/Ano</label>
+                                <label for="mes">Mês/Ano:</label>
                                 <input type="text" id="mes"/>
                             </div>
                         </div>
@@ -214,19 +216,19 @@
                         </div>
 
                         <div class="col doentes-no-inicio">
-                            <input type="number" name="" id="">
-                            <input type="number" name="" id="">
-                            <input type="number" name="" id="">
-                            <input type="number" name="" id="">
-                            <input type="number" name="" id="">
-                            <input type="number" name="" id="">
-                            <input type="number" name="" id="">
+                            <input type="number" min="0" data-subtotaleixoy="l1l2-ca" data-subtotaleixoyoutput="l3-ca" data-totaleixoy="l1l2l4l5-ca" data-totaleixoyoutput="total-ca"/>
+                            <input type="number" min="0" data-subtotaleixoy="l1l2-ca" data-subtotaleixoyoutput="l3-ca" data-totaleixoy="l1l2l4l5-ca" data-totaleixoyoutput="total-ca"/>
+                            <input type="number" min="0" class="l3-ca" />
+                            <input type="number" min="0" data-subtotaleixoy="l4l5-ca" data-subtotaleixoyoutput="l6-ca" data-totaleixoy="l1l2l4l5-ca" data-totaleixoyoutput="total-ca"/>
+                            <input type="number" min="0" data-subtotaleixoy="l4l5-ca" data-subtotaleixoyoutput="l6-ca" data-totaleixoy="l1l2l4l5-ca" data-totaleixoyoutput="total-ca"/>
+                            <input type="number" min="0" class="l6-ca"/>
+                            <input type="number" min="0" class="total-ca" />
                         </div>
 
                         <div class="col casos-novos">
                             <input type="number" name="" id="">
                             <input type="number" name="" id="">
-                            <input type="number" name="" id="">
+                            <input type="number" name="" id="" />
                             <input type="number" name="" id="">
                             <input type="number" name="" id="">
                             <input type="number" name="" id="">
@@ -385,19 +387,6 @@
             </div>
 
             <aside class="manipulacao-do-menu">    
-                <!-- Caixa de pesquisa "Ir para" -->
-                <div class="pesquisa">
-                    <div class="caixa-de-pesquisa">
-                        <input type="number" placeholder="Introduza o número da linha" min="1" max="63" class="pesquisar-linha">    
-                        <button class="fechar" title="Fechar">&times;</button>
-                    </div>
-                    
-                    <div class="caixa-de-alerta query-out-of-range">
-                        <p><b class="entered-num"></b> não corresponde à nenhuma linha. A ficha tem no máximo 63 linhas a partir de 1.</p>
-                        
-                        <button>OK</button>
-                    </div>
-                </div> 
     
                 <!-- Esvaziamento da ficha -->
                 <div class="esvaziamento">
@@ -497,7 +486,7 @@
                         As células de entrada de dados do Totalizador têm uma largura para 6 algarismos no máximo, portanto, só podem mostrar valores até <strong>999&nbsp;999</strong>. A partir de 1&nbsp;000&nbsp;000, ficam visíveis somente os primeiros 6 algarismos e do 7º em diante, ficam fora da área visível da célula, com excepção das dos totais, que mostram até 7 algarismos (<strong>9&nbsp;999&nbsp;999</strong>).
                     </p>
                     <p class="destaque suposicao">
-                         Presumo que actualmente (2022) não haja uma Unidade Sanitária em Moçambique com um número de consultas do PRN I maior que 999 999.
+                         Presumo que actualmente (2023) não haja uma Unidade Sanitária em Moçambique com um número de consultas do PRN I maior que 999 999.
                     </p>
                     <div class="seccao-de-interatividade">
                         <div>
@@ -529,7 +518,7 @@
                     <img src="imagens/totalizador-de-resumo-mensal-de-prn-i.png" alt="Totalizador de Resumo Mensal de PRN I"/>
                 </figure>
 
-                <p>O <b>Totalizador de Resumo Mensal de PRN I</b> é um serviço online gratuito que auxilia na elaboração do respectivo resumo totalizando-o automaticamente com base nos dados preenchidos pelo usuário (Profissional de Saúde). A sua estrutura é baseada na da ficha de resumo mensal de PRN I actualmente (2022) vigente no Serviço Nacional de Saúde em Moçambique.</p>
+                <p>O <b>Totalizador de Resumo Mensal de PRN I</b> é um serviço online gratuito que auxilia na elaboração do respectivo resumo totalizando-o automaticamente com base nos dados preenchidos pelo usuário (Profissional de Saúde). A sua estrutura é baseada na da ficha de resumo mensal de PRN I actualmente (2023) vigente no Serviço Nacional de Saúde em Moçambique.</p>
 
                 <p>O propósito é de flexibilizar a elaboração do resumo através do cálculo automático dos totais.</p>
 
@@ -661,11 +650,24 @@
                     <h4>Links para outros serviços afins</h4>
                     <ul>
                         <li>
+                            <a href="https://quinamine.github.io/totalizador-de-resumo-mensal-de-consultas/index.html" target="_blank">Totalizador de Resumo Mensal de Consultas</a>
+                        </li>
+                        <li>
                             <a href="https://quinamine.github.io/totalizador-de-resumo-mensal-de-hiv-e-sida/index.html" target="_blank">Totalizador de Resumo Mensal de HIV/SIDA</a>
                         </li>
                         <li>
-                            <a href="https://quinamine.github.io/totalizador-de-resumo-mensal-de-consultas/index.html" target="_blank">Totalizador de Resumo Mensal de Consultas</a>
+                            <a href="https://quinamine.github.io/totalizador-de-resumo-mensal-malaria/index.html" target="_blank">Totalizador de Resumo Mensal de Malária</a>
                         </li>
+                        <li>
+                            <a href="https://quinamine.github.io/totalizador-de-resumo-mensal-de-prn-ii/index.html" target="_blank">Totalizador de Resumo Mensal de PRN II</a>
+                        </li>
+                        <li>
+                            <a href="https://quinamine.github.io/totalizador-de-resumo-mensal-de-saaj/index.html" target="_blank">Totalizador de Resumo Mensal de SAAJ</a>
+                        </li>
+                        <li>
+                            <a href="https://quinamine.github.io/totalizador-de-resumo-mensal-de-ccd/index.html" target="_blank">Totalizador de Resumo Mensal de CCD</a>
+                        </li>
+
                         <li>
                             <a href="https://quinamine.github.io/tarv-pediatrico/index.html" target="_blank">Doseador Pediátrico de Antirretrovirais</a>
                         </li>
@@ -674,7 +676,7 @@
                         </li>                  
                     </ul>   
                 </div>
-                <p>Desenvolvido com &#128153; por <a href="https://quinamine.github.io/aderito-felix-quinamine/index.html">Adérito Félix Quinamine</a> |&nbsp;&copy;&nbsp;2022 -&nbsp;Totalizador&nbsp;de&nbsp;Resumo&nbsp;Mensal&nbsp;de&nbsp;PRN I</p>
+                <p>Desenvolvido com &#128153; por <a href="https://quinamine.github.io/aderito-felix-quinamine/index.html">Adérito Félix Quinamine</a> |&nbsp;&copy;&nbsp;2023 -&nbsp;Totalizador&nbsp;de&nbsp;Resumo&nbsp;Mensal&nbsp;de&nbsp;PRN I</p>
                 <a href="#ficha" class="voltar">&uarr;</a>
             </div>
         </footer>
