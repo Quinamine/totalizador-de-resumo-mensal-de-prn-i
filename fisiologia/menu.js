@@ -133,14 +133,9 @@ function eventListeners() {
     // PROTEGER ACESSO À READONLY CELS
     readonlyCels.forEach ( cel => {
         cel.addEventListener("click", () => {
-            if(cel.matches(".nao-aplicavel")) {
-                const alerta = document.querySelector("div.caixa-de-alerta.indicador-nao-aplicavel");
-            
-                alerta.classList.add("on");
-                document.querySelector("div.caixa-de-alerta.restricao-de-acesso-celular").classList.add("on");
-                    
-                desfoqueDoFundo.on();
-            }
+            document.querySelector("div.caixa-de-alerta.restricao-de-acesso-celular").classList.add("on");
+                
+            desfoqueDoFundo.on();
         })
     });
 

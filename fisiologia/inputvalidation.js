@@ -8,8 +8,8 @@ const inputValidation = {
             this.adicionarOuRemoverFundoVermelho(cel, "-");
             let numAlgarismos = cel.value.length;
 
-            if(!cel.matches("[readonly") && (numAlgarismos > 6) || 
-            cel.matches("[readonly") && (numAlgarismos > 7)) {
+            if(!cel.matches("readonly") && (numAlgarismos > 6) || 
+            cel.matches("readonly") && (numAlgarismos > 9)) {
                 this.adicionarOuRemoverFundoVermelho(cel, "+");
                 numeroDeCelulasVermelhas++;
             }
@@ -25,7 +25,7 @@ const inputValidation = {
     },
     
     mostrarMotivoPelasCelulasVermelhas() {
-        if(!sessionStorage.getItem("trmsaaj-naoMostrarMaisMotivoDeRedCels")) {
+        if(!sessionStorage.getItem("trmprni-naoMostrarMaisMotivoDeRedCels")) {
             alertaVermelho.classList.add("on");
             desfoqueDoFundo.on();
         }
@@ -39,9 +39,9 @@ const inputValidation = {
     salvarPreferenciaNaoMostrarMais: () => {
         const checkboxNaoMostrarMais = document.querySelector("#nao-mostrar-mais");
         if(checkboxNaoMostrarMais.checked) {
-            sessionStorage.setItem("trmsaaj-naoMostrarMaisMotivoDeRedCels", "checked");
+            sessionStorage.setItem("trmprni-naoMostrarMaisMotivoDeRedCels", "checked");
         } else {
-            sessionStorage.removeItem("trmsaaj-naoMostrarMaisMotivoDeRedCels");
+            sessionStorage.removeItem("trmprni-naoMostrarMaisMotivoDeRedCels");
         }
     }
 }
