@@ -207,6 +207,7 @@ div.ficha span {
     align-items: flex-end;
     justify-content: center;
     padding: 4px;
+    cursor: default;
 }
 
 /* SECCAO C - SAIDAS */

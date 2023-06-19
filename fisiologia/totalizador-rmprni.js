@@ -76,46 +76,59 @@ const totalizacao = {
 
         if(cel.dataset.totalquetransitam) {
             let abc = cel.dataset.totalquetransitam.split("-mais-");
-            let a = abc[0], b = abc[1], c = abc[2];
-
-            const ah = document.querySelector(`.${a}`);
-            const be = document.querySelector(`.${b}`);
-            const ce = document.querySelector(`.${c}`);
+            
+            const a = document.querySelector(`.${abc[0]}`);
+            const b = document.querySelector(`.${abc[1]}`);
+            const c =  document.querySelector(`.${abc[2]}`);
             const cd = document.querySelector(`.${cel.dataset.totalquetransitamoutput}`);
 
-            cd.value = Number(ah.value) + Number(be.value) - ce.value;
+            cd.value = Number(a.value) + Number(b.value) - c.value;
             
         }
 
         if(cel.dataset.subtotalquetransitam) {
             let abc = cel.dataset.subtotalquetransitam.split("-mais-");
-            let a = abc[0], b = abc[1], c = abc[2];
 
-            const ah = document.querySelector(`.${a}`);
-            const be = document.querySelector(`.${b}`);
-            const ce = document.querySelector(`.${c}`);
+            const a = document.querySelector(`.${abc[0]}`);
+            const b = document.querySelector(`.${abc[1]}`);
+            const c =  document.querySelector(`.${abc[2]}`);
             const cd = document.querySelector(`.${cel.dataset.subtotalquetransitamoutput}`);
 
-            cd.value = Number(ah.value) + Number(be.value) - ce.value;
+            cd.value = Number(a.value) + Number(b.value) - c.value;
         }
-
 
         if(cel.dataset.totalgeralquetransitam) {
-            let abc = cel.dataset.totalgeralquetransitam.split("-mais-");
-            let a = abc[0], b = abc[1], c = abc[2];
+            let abc = cel.dataset.totalgeralquetransitam.split("-mais-"); 
 
-            const ah = document.querySelector(`.${a}`);
-            const be = document.querySelector(`.${b}`);
-            const ce = document.querySelector(`.${c}`);
+            const a = document.querySelector(`.${abc[0]}`);
+            const b = document.querySelector(`.${abc[1]}`);
+            const c =  document.querySelector(`.${abc[2]}`);
             const cd = document.querySelector(`.${cel.dataset.totalgeralquetransitamoutput}`);
 
-            cd.value = Number(ah.value) + Number(be.value) - ce.value;
+            cd.value = Number(a.value) + Number(b.value) - c.value;
         }
 
-        /*if(cel.dataset.subtotaleixoynaoaplicaveloutput) {
-            let subtotaleixoyNaoAplicavelOutput = document.querySelector(`.${cel.dataset.subtotaleixoynaoaplicaveloutput}`);
-            subtotaleixoyNaoAplicavelOutput.value = 0;
-        }*/
+        if(cel.dataset.calcproporcaodesaida) {
+
+            const cels = document.querySelectorAll("[data-calcproporcaodesaida]");
+
+            for (const c of cels) {
+                let celulasPorDividir = c.dataset.calcproporcaodesaida.split("-divisao-");
+                
+                const cNum = document.querySelector(`.${celulasPorDividir[0]}`);
+                const ce = document.querySelector(`.${celulasPorDividir[1]}`);
+
+                const proporcaoOutput = document.querySelector(`.${c.dataset.calcproporcaodesaidaoutput}`);
+
+                let proporcao_de_saida = (cNum.value / ce.value * 100);
+
+                if(proporcao_de_saida%1!==0) {
+                    proporcao_de_saida = proporcao_de_saida.toFixed(2);
+                } 
+                proporcaoOutput.value = proporcao_de_saida;
+            }
+
+        }
     },
 
     totalizarCelulas(celulasPorTotalizar, celulaDeSaida) {
