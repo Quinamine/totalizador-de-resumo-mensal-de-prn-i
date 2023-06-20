@@ -8,7 +8,7 @@ const inputValidation = {
             this.adicionarOuRemoverFundoVermelho(cel, "-");
             let numAlgarismos = cel.value.length;
 
-            if(!cel.matches("readonly") && (numAlgarismos > 6) || 
+            if(!cel.matches("readonly") && (numAlgarismos > 9) || 
             cel.matches("readonly") && (numAlgarismos > 9)) {
                 this.adicionarOuRemoverFundoVermelho(cel, "+");
                 numeroDeCelulasVermelhas++;

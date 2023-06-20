@@ -26,15 +26,9 @@
         <!-- SCRIPTS -->
         <script src="fisiologia/menu.js"></script>
         <script src="fisiologia/inputvalidation.js"></script>
-        <script src="fisiologia/totalizador-rmprni.js"></script>
-       
-        <!-- 
-        
-        <script src="fisiologia/referencia.js"></script>
+        <script src="fisiologia/totalizador-rmprni.js"></script>  
         <script src="fisiologia/webstorage.js"></script>
 
-        -->
-		
 		<!-- Google tag (gtag.js) -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-FYM982DGXV"></script>
 		<script>
@@ -376,35 +370,35 @@
                     </div>
                     <footer class="da-ficha">
                         <div>
-                            <span class="gray-bg">Fórmula para cálculo de indicadores de desempenho</span>
+                            <span>Fórmula para cálculo de indicadores de desempenho</span>
                             <span>Proporção de saídas 6-59 meses</span>
                             <span>Proporção de saídas 5-14 anos</span>
                         </div>
                         <div>
                             <span>C1/C*100</span>
-                            <input type="number" min="0" class="l9-cc1" readonly />
-                            <input type="number" min="0" class="l10-cc1" readonly />
+                            <span class="l9-cc1"></span>
+                            <span class="l10-cc1"></span>
                         </div>
                         <div>
                             <span>C2/C*100</span>
-                            <input type="number" min="0" class="l9-cc2" readonly />
-                            <input type="number" min="0" class="l10-cc2" readonly />
+                            <span class="l9-cc2"></span>
+                            <span class="l10-cc2"></span>
                         </div>
                         <div>
                             <span>C3/C*100</span>
-                            <input type="number" min="0" class="l9-cc3" readonly />
-                            <input type="number" min="0" class="l10-cc3" readonly />
+                            <span class="l9-cc3"></span>
+                            <span class="l10-cc3"></span>
                         </div>
                         <div>
                             <span>C4/C*100</span>
-                            <input type="number" min="0" class="l9-cc4" readonly />
-                            <input type="number" min="0" class="l10-cc4" readonly />
+                            <span class="l9-cc4"></span>
+                            <span class="l10-cc4"></span>
                         </div>
 
                         <div>
                             <span>C5/C*100</span>
-                            <input type="number" min="0" class="l9-cc5" readonly />
-                            <input type="number" min="0" class="l10-cc5" readonly />
+                            <span class="l9-cc5"></span>
+                            <span class="l10-cc5"></span>
                         </div>
                     </footer>
                 </div>
@@ -412,26 +406,6 @@
                  <!-- Adicionar nota -->
                 <div class="linha nota">
                     <textarea id="nota" rows="3" placeholder="Adicionar uma nota..."></textarea>
-                </div>
-
-                <!-- Referência -->
-                <div class="linha-de-referencia">
-                    <div class="coluna-de-referencia">      
-                        <div>
-                            <span>Linha:</span>
-                            <output class="ref-de-linha"></output>
-                        </div>
-        
-                        <div>
-                            <span>Faixa&nbsp;etária:</span>
-                            <output class="ref-de-faixa-etaria"></output>
-                        </div>
-        
-                        <div>
-                            <span>Sexo:</span>
-                            <output class="ref-de-sexo"></output>
-                        </div>
-                    </div>
                 </div>
             </div>
 
@@ -464,6 +438,26 @@
                         <h4>Dados adicionais</h4>
                         <ul class="limpadores-de-dados-adicionais">
                             <li>
+                                <input type="checkbox" id="us" checked data-for="nome-da-us"/>
+                                <label for="us">Nome da Unidade Sanitária</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="us-code" checked data-for="codigo-da-us"/>
+                                <label for="us-code">Código da Unidade Sanitária</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="sector" checked data-for="nome-do-sector"/>
+                                <label for="sector">Nome do Sector da Unidade Sanitária</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="data" checked data-for="data-do-relatorio"/>
+                                <label for="data">Data do Relatório</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="nome-do-compilador" checked data-for="preparado-por"/>
+                                <label for="nome-do-compilador">Nome do Responsável pelo <br/> compilamento</label>
+                            </li>
+                            <li>
                                 <input type="checkbox" id="nome-da-provincia" checked data-for="provincia"/>
                                 <label for="nome-da-provincia">Província</label>
                             </li>
@@ -471,32 +465,12 @@
                                 <input type="checkbox" id="nome-do-distrito" checked data-for="distrito"/>
                                 <label for="nome-do-distrito">Distrito</label>
                             </li>
-                            <li>
-                                <input type="checkbox" id="nome-da-us" checked data-for="us"/>
-                                <label for="nome-da-us">US</label>
-                            </li>
-                            <li>
-                                <input type="checkbox" id="month" checked data-for="mes"/>
-                                <label for="month">Mês</label>
-                            </li>
-                            <li>
-                                <input type="checkbox" id="nome-do-dc" checked data-for="dc"/>
-                                <label for="nome-do-dc">Nome do Director Clínico</label>
-                            </li>
                             
                             <li>
-                                <input type="checkbox" id="data-de-elaboracao" checked data-for="data"/>
-                                <label for="data-de-elaboracao">Data de elaboração</label>
+                                <input type="checkbox" id="month" checked data-for="mes"/>
+                                <label for="month">Mês/Ano</label>
                             </li>
-
-                            <li>
-                                <input type="checkbox" id="nome-do-compilador" checked data-for="compilador"/>
-                                <label for="nome-do-compilador">Nome do Responsável pelo <br/> compilamento</label>
-                            </li>
-                            <li>
-                                <input type="checkbox" id="assinatura-do-compilador" checked data-for="assinatura"/>
-                                <label for="assinatura-do-compilador">Assinatura do Responsável pelo <br/> compilamento</label>
-                            </li>
+                        
                             <li>
                                 <input type="checkbox" id="nota-do-resumo" checked data-for="nota"/>
                                 <label for="nota-do-resumo">Nota do resumo</label>
@@ -527,15 +501,15 @@
                     Toda célula cujo fundo está vermelho tem um ou mais algarismos omissos por indisponibilidade de espaço na respectiva célula.
                 </p>
                 <p>
-                    As células de entrada de dados do Totalizador têm uma largura para 6 algarismos no máximo, portanto, só podem mostrar valores até <strong>999&nbsp;999</strong>. A partir de 1&nbsp;000&nbsp;000, ficam visíveis somente os primeiros 6 algarismos e do 7º em diante, ficam fora da área visível da célula, com excepção das dos totais, que mostram até 7 algarismos (<strong>9&nbsp;999&nbsp;999</strong>).
+                    As células de entrada de dados do Totalizador têm uma largura para 9 algarismos no máximo, portanto, só podem mostrar valores até <strong>999&nbsp;999&nbsp;999</strong>. A partir de 1&nbsp;000&nbsp;000&nbsp;000, ficam visíveis somente os primeiros 9 algarismos e do 10º em diante, ficam fora da área visível da célula.
                 </p>
                 <p class="destaque suposicao">
-                        Presumo que actualmente (2023) não haja uma Unidade Sanitária em Moçambique com um número de consultas do PRN I maior que 999 999.
+                    Presumo que actualmente (2023) não haja uma Unidade Sanitária em Moçambique com um número de consultas de PRN I maior que 999 999 999.
                 </p>
                 <div class="seccao-de-interatividade">
                     <div>
                         <input type="checkbox" id="nao-mostrar-mais" />
-                        <label for="nao-mostrar-mais">Não mostrar mais esta mensagem</label>
+                        <label for="nao-mostrar-mais">Não me mostre mais esta informação.</label>
                     </div>
                     <button class="close-redcels-obs">Fechar</button>
                 </div>
@@ -720,7 +694,7 @@
                         </li>                  
                     </ul>   
                 </div>
-                <p>Desenvolvido com &#128153; por <a href="https://quinamine.github.io/aderito-felix-quinamine/index.html">Adérito Félix Quinamine</a> |&nbsp;&copy;&nbsp;2023 -&nbsp;Totalizador&nbsp;de&nbsp;Resumo&nbsp;Mensal&nbsp;de&nbsp;PRN I</p>
+                <p class="copyright">&copy;&nbsp;2023 Todos os direitos reservados -&nbsp;Totalizador&nbsp;de&nbsp;Resumo&nbsp;Mensal&nbsp;de&nbsp;PRN I -&nbsp;Desenvolvido com &#128153; por <a href="https://quinamine.github.io/aderito-felix-quinamine/index.html">Adérito&nbsp;Félix&nbsp;Quinamine</a>.</p>
                 <a href="#ficha" class="voltar">&uarr;</a>
             </div>
         </footer>

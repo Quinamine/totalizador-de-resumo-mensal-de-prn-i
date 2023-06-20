@@ -11,7 +11,7 @@ const storage  = {
     },
 
     salvarDadosAdicionais() {
-        const dadosAdicionais = document.querySelectorAll("div.container input[type=text], input[type=date], textarea#nota");
+        const dadosAdicionais = document.querySelectorAll("div.container input[type=text], input[type=date], input[type=number]#codigo-da-us, textarea#nota");
 
         dadosAdicionais.forEach ( dado => {
             dado.addEventListener("input", () => localStorage.setItem(`trmprni-${dado.id}`, `${dado.value}`));
@@ -125,7 +125,8 @@ const totalizacao = {
                 if(proporcao_de_saida%1!==0) {
                     proporcao_de_saida = proporcao_de_saida.toFixed(2);
                 } 
-                proporcaoOutput.value = proporcao_de_saida;
+                
+                proporcaoOutput.textContent = `${proporcao_de_saida}%`;
             }
 
         }

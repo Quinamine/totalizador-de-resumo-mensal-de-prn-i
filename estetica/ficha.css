@@ -167,9 +167,23 @@ div.ficha header > div {
     text-align: center;
 }
 
+@media screen and (max-width: 1290px) {
+    div.ficha header > div:first-child {
+        border-right: 2px solid var(--border-color);
+        position: sticky;
+        left: -15px;
+        background-color: var(--gray-c);
+    }
+
+    div.ficha header > div:nth-child(2) {
+        border-left: none;
+    }
+}
+
 div.ficha header > div:last-child {
     border-right: 2px solid var(--border-color);
 }
+
 div.ficha header div.admissoes {
     display: grid;
     grid-template-columns: 75px calc(75px*2);
@@ -251,6 +265,16 @@ div.ficha div.body span {
     border-bottom: 2px solid var(--border-color);
 }
 
+@media screen and (max-width: 1290px) {
+    div.body div.grupos-etarios {
+        position: -webkit-sticky;
+        position: sticky;
+        left: -15px;
+        background-color: var(--yt);
+        border-right: 2px solid var(--border-color);
+    }
+}
+
 div.body div.grupos-etarios span {
     position: relative;
 }
@@ -284,6 +308,13 @@ div.body div.doentes-no-inicio {
 
 div.body div.doentes-no-inicio input {
     background-color: var(--gray-c);
+}
+
+@media screen and (max-width: 1290px) {
+    div.body div.doentes-no-inicio input {
+        border-left: none;
+        width: 100%;
+    }
 }
 
 div.body div.total-de-doentes-que-transitam {
@@ -322,15 +353,13 @@ footer.da-ficha > div:last-child {
     border-right: 2px solid var(--border-color);
 }
 
-footer.da-ficha span,
-footer.da-ficha input {
+footer.da-ficha span {
     align-items: center !important;
     border-bottom: 2px solid var(--border-color);
     border-left: 2px solid var(--border-color);
 }
 
-footer.da-ficha div:nth-child(n+2) span,
-span.gray-bg {
+footer.da-ficha div span:first-child {
     background-color: var(--gray-c);
 }
 

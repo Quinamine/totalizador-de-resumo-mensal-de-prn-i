@@ -11,8 +11,8 @@
     --fullblack: #000000;
     --black-alpha-5: rgba(0, 0, 0, .5);
     --black-alpha-8: rgba(0, 0, 0, .8);
-    --btn-bgc: var(--secondary-color);
-    --btn-hover-bgc: rgb(116, 116, 235);
+    --btn-bgc: var(--primary-color);
+    --btn-hover-bgc: #bbbbbb;
     --footer-bgc: var(--primary-color);
     --important-text-bgc: #f4f4f4;
     --gray: #888888;
@@ -79,8 +79,8 @@ main {
 }
 
 *::selection {
-    background-color: var(--secondary-color);
-    color: var(--yt);
+    background-color: var(--primary-color);
+    color: var(--text-color);
 }
 
 a {
@@ -400,6 +400,7 @@ div.linha.do-rodape > p {
 }
 
 div.linha.do-rodape > *:nth-child(2) {
-    border-bottom: 1px dotted var(--secondary-color);
+    border-top: 1px dotted var(--secondary-color);
+    font-size: 12px;
 }
     

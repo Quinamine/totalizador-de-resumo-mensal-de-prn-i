@@ -5,7 +5,7 @@ const menu = {
     // ESVAZIAR A FICHA
     esvaziamento() {
         const confirmacao = document.querySelector("div.caixa-de-confirmacao");
-        const celulas = document.querySelectorAll("div.body div.col input");
+        const celulas = document.querySelectorAll("div.ficha input");
         return {
             mostrarCaixaDeConfirmacao: () => {
                 let celulasPreenchidas = 0;
@@ -50,6 +50,12 @@ const menu = {
                         if(IdDoDadoAdicional === "nota") {
                             dadoAdicional.classList.remove("bold");
                         }
+                    }
+
+                    const proporcoesOutput = document.querySelectorAll("footer.da-ficha > div span:nth-child(n+2)");
+
+                    for(const p of proporcoesOutput) {
+                        p.textContent = "";
                     }
                 }); 
                 desfoqueDoFundo.off();  

@@ -262,14 +262,16 @@ div.caixa-de-alerta button {
     padding: 6px 4px;
     margin-left: auto;
     display: block;
-    color: var(--yt);
+    color: var(--gray-6);
     background-color: var(--btn-bgc);
     border-radius: 4px;
     font-size: 14px;
+    font-weight: 700;
 }
 
 div.caixa-de-alerta button:hover {
     background-color: var(--btn-hover-bgc);
+    color: var(--text-color)
 }
 
 /* CONFIRMAÇÃO DE ESVAZIAMENTO DA FICHA */
