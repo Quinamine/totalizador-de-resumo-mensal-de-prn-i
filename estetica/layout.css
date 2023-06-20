@@ -30,6 +30,8 @@
     :root {
         --border-color: var(--fullblack);
         --text-color: var(--fullblack);
+        --gray-5: var(--fullblack);
+        --gray-6: var(--fullblack);
     }
 }
 
@@ -52,7 +54,6 @@ body {
         margin: 0.5cm;
         size: landscape;
     }
-    
     
     body {
         -webkit-print-color-adjust: exact;
@@ -289,7 +290,7 @@ section.menu ul li.partilha {
     } 
     
     section.menu ul li {
-        flex: 1;
+        /*flex: 1;*/
         text-align: center;
     }
 
@@ -403,4 +404,7 @@ div.linha.do-rodape > *:nth-child(2) {
     border-top: 1px dotted var(--secondary-color);
     font-size: 12px;
 }
+
+
+
     

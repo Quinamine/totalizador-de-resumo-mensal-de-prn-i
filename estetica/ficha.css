@@ -45,6 +45,32 @@ div.container input[readonly]:focus {
     border-left: none !important;
 }
 
+div.ficha header > div, 
+div.admissoes div.col3 span:last-child,
+div.ficha div.saidas div,
+div.body input, 
+div.ficha div.body span, 
+footer.da-ficha span {
+    border-left: 2px solid var(--border-color);
+}
+
+div.geo div.geo-col.col1, 
+div.ficha header > div:last-child,
+div.body div.total-de-doentes-que-transitam,
+footer.da-ficha > div:last-child {
+    border-right: 2px solid var(--border-color);
+}
+
+div.geo-col div, 
+div.ficha header > div,
+div.admissoes div.col1, 
+div.ficha div.saidas div:first-child, 
+div.admissoes div.col3 span:first-child, 
+div.body input, 
+div.ficha div.body span,
+footer.da-ficha span {
+    border-bottom: 2px solid var(--border-color);
+}
 /* INIT */
 div.container {
     max-width: 1290px;
@@ -112,12 +138,8 @@ div.geo div.geo-col {
     grid-template-rows: 32px;
 }
 
-div.geo div.geo-col.col1 {
-    border-right: 2px solid var(--border-color);
-}
 div.geo-col div {
     min-height: 32px;
-    border-bottom: 2px solid var(--border-color);
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -142,7 +164,7 @@ div.geo-col input {
 }
 
 div.geo-col input[type=number] {
-    font-size: 14.5px;
+    font-size: 15px;
 }
 /* FICHA */
 
@@ -162,8 +184,6 @@ div.ficha header {
 
 div.ficha header > div {
     border-top: 2px solid var(--border-color);
-    border-bottom: 2px solid var(--border-color);
-    border-left: 2px solid var(--border-color);
     text-align: center;
 }
 
@@ -180,9 +200,6 @@ div.ficha header > div {
     }
 }
 
-div.ficha header > div:last-child {
-    border-right: 2px solid var(--border-color);
-}
 
 div.ficha header div.admissoes {
     display: grid;
@@ -192,7 +209,6 @@ div.ficha header div.admissoes {
 
 div.admissoes div.col1 {
     grid-column: 1/3;
-    border-bottom: 2px solid var(--border-color);
 }
 
 div.admissoes div.col3 {
@@ -201,17 +217,8 @@ div.admissoes div.col3 {
     grid-template-rows: 23px auto;
 }
 
-div.admissoes div.col3 {
-    border-left: 2px solid var(--border-color);
-}
-
 div.admissoes div.col3 span:first-child {
     grid-column: 1/3;
-    border-bottom: 2px dotted var(--border-color);
-}
-
-div.admissoes div.col3 span:last-child {
-    border-left: 2px solid var(--border-color);
 }
 
 div.ficha span {
@@ -231,13 +238,8 @@ div.ficha header div.saidas {
     grid-template-rows: 25px auto;
 }
 
-div.ficha div.saidas div {
-    border-left: 2px solid var(--border-color);
-}
-
 div.ficha div.saidas div:first-child {
     grid-column: 1/6;
-    border-bottom: 2px solid var(--border-color);
 }
 
 /* BODY DA FICHA */
@@ -245,11 +247,6 @@ div.ficha div.saidas div:first-child {
 div.body {
     display: grid;
     grid-template-columns: 175px 75px 77px 76px 72px 138px 77px repeat(3, 75px) 98px repeat(2, 138px);
-}
-
-div.body input {
-    border-left: 2px solid var(--border-color);
-    border-bottom: 2px solid var(--border-color);
 }
 
 div.body > div {
@@ -261,8 +258,6 @@ div.ficha div.body span {
     align-items: center;
     justify-content: flex-start;
     text-indent: 20px;
-    border-left: 2px solid var(--border-color);
-    border-bottom: 2px solid var(--border-color);
 }
 
 @media screen and (max-width: 1290px) {
@@ -317,10 +312,6 @@ div.body div.doentes-no-inicio input {
     }
 }
 
-div.body div.total-de-doentes-que-transitam {
-    border-right: 2px solid var(--border-color);
-}
-
 div.body div.b input, div.c input, div.d input {
     background-color: var(--gray-c);
 }
@@ -330,10 +321,6 @@ div.body div.b input, div.c input, div.d input {
 div.ficha input {
     width: calc(100% - 4px);
 }
-
-/** Footer da ficha **/
-/* grid-template-columns: 175px 75px 77px 76px 72px 138px 77px repeat(3, 75px) 98px repeat(2, 138px);
-}*/
 
 div.ficha footer {
     display: grid;
@@ -349,14 +336,8 @@ footer.da-ficha > div:first-child span {
     justify-content: flex-end;
 }
 
-footer.da-ficha > div:last-child {
-    border-right: 2px solid var(--border-color);
-}
-
 footer.da-ficha span {
     align-items: center !important;
-    border-bottom: 2px solid var(--border-color);
-    border-left: 2px solid var(--border-color);
 }
 
 footer.da-ficha div span:first-child {
