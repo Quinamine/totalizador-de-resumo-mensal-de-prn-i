@@ -93,7 +93,7 @@ const menu = {
             },
 
             confirmar() {
-                const gridInputs  = document.querySelectorAll("[data-totaleixoy], [readonly]");
+                const gridInputs  = document.querySelectorAll("[data-totaleixoy], [readonly], .ficha__rodape output");
                 const dadosAdicionais__checkboxes = document.querySelectorAll("[data-for]");
        
                 for (let i = 0; i < gridInputs.length; i++) {

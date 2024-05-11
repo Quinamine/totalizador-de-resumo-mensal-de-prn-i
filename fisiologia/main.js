@@ -60,6 +60,28 @@ const totalizador = {
             totalGeralOutput.value = this.somar(totalGeral); 
         }
 
+        if(inputTarget.dataset.proporcaodesaida6a59mesesc1) {
+            let proporcaoDeSaida6a59mesesC1 = inputTarget.dataset.proporcaodesaida6a59mesesc1;
+            let proporcaoDeSaida6a59mesesC1Output = document.querySelector(`.${inputTarget.dataset.proporcaodesaida6a59mesesc1output}`);      
+            proporcaoDeSaida6a59mesesC1Output.value = this.calcularProporcaoDeSaida(proporcaoDeSaida6a59mesesC1);
+
+            let proporcaoDeSaida6a59mesesC2 = inputTarget.dataset.proporcaodesaida6a59mesesc2;
+            let proporcaoDeSaida6a59mesesC2Output = document.querySelector(`.${inputTarget.dataset.proporcaodesaida6a59mesesc2output}`);      
+            proporcaoDeSaida6a59mesesC2Output.value = this.calcularProporcaoDeSaida(proporcaoDeSaida6a59mesesC2);
+
+            let proporcaoDeSaida6a59mesesC3 = inputTarget.dataset.proporcaodesaida6a59mesesc3;
+            let proporcaoDeSaida6a59mesesC3Output = document.querySelector(`.${inputTarget.dataset.proporcaodesaida6a59mesesc3output}`);      
+            proporcaoDeSaida6a59mesesC3Output.value = this.calcularProporcaoDeSaida(proporcaoDeSaida6a59mesesC3);
+
+            let proporcaoDeSaida6a59mesesC4 = inputTarget.dataset.proporcaodesaida6a59mesesc4;
+            let proporcaoDeSaida6a59mesesC4Output = document.querySelector(`.${inputTarget.dataset.proporcaodesaida6a59mesesc4output}`);      
+            proporcaoDeSaida6a59mesesC4Output.value = this.calcularProporcaoDeSaida(proporcaoDeSaida6a59mesesC4);
+
+            let proporcaoDeSaida6a59mesesC5 = inputTarget.dataset.proporcaodesaida6a59mesesc5;
+            let proporcaoDeSaida6a59mesesC5Output = document.querySelector(`.${inputTarget.dataset.proporcaodesaida6a59mesesc5output}`);      
+            proporcaoDeSaida6a59mesesC5Output.value = this.calcularProporcaoDeSaida(proporcaoDeSaida6a59mesesC5);
+        }
+
         // total de pacientesquetransitam
         let subtotalAmaisBmenosC = inputTarget.dataset.subtotalquetransitam;
         const subtotalQueTransitamOutput = document.querySelector(`.${inputTarget.dataset.subtotalquetransitamoutput}`);
@@ -97,6 +119,24 @@ const totalizador = {
         let total = Number(a.value) + Number(b.value) - Number(c.value);
         return total;
        
+    },
+
+    calcularProporcaoDeSaida(saidaDivisaoTotalDeSaidas) {
+        let classeDesaida = saidaDivisaoTotalDeSaidas.split("-divisao-")[0];
+        let classeDetotalDeSaidas = saidaDivisaoTotalDeSaidas.split("-divisao-")[1];
+
+        let saida = document.querySelector(`.${classeDesaida}`);
+        let totalDeSaidas = document.querySelector(`.${classeDetotalDeSaidas}`);
+
+        let proporcaoDeSaida = saida.value / totalDeSaidas.value * 100;
+
+        if(isNaN(proporcaoDeSaida)) proporcaoDeSaida = 0;
+
+        if(parseInt(proporcaoDeSaida) !== parseFloat(proporcaoDeSaida)) {
+            proporcaoDeSaida = proporcaoDeSaida.toFixed(1)
+        }
+
+        return proporcaoDeSaida + "%";
     }
 }
 
@@ -106,7 +146,6 @@ function escutarEventos() {
     gridInputs.forEach( gi => {
         gi.addEventListener("input", () => {
             totalizador.filtrarEtotalizarCelulas(gi);
-            totalizador.totalizarPacientesQueTransitam(gi);
         });
         gi.value !== "" && totalizador.filtrarEtotalizarCelulas(gi);
     });
