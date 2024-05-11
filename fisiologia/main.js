@@ -60,26 +60,26 @@ const totalizador = {
             totalGeralOutput.value = this.somar(totalGeral); 
         }
 
-        if(inputTarget.dataset.proporcaodesaida6a59mesesc1) {
-            let proporcaoDeSaida6a59mesesC1 = inputTarget.dataset.proporcaodesaida6a59mesesc1;
-            let proporcaoDeSaida6a59mesesC1Output = document.querySelector(`.${inputTarget.dataset.proporcaodesaida6a59mesesc1output}`);      
-            proporcaoDeSaida6a59mesesC1Output.value = this.calcularProporcaoDeSaida(proporcaoDeSaida6a59mesesC1);
+        if(inputTarget.dataset.proporcaodesaidasc1) {
+            let proporcaoDeSaidasC1 = inputTarget.dataset.proporcaodesaidasc1;
+            let proporcaoDeSaidasC1Output = document.querySelector(`.${inputTarget.dataset.proporcaodesaidasc1output}`);      
+            proporcaoDeSaidasC1Output.value = this.calcularProporcaoDeSaida(proporcaoDeSaidasC1);
 
-            let proporcaoDeSaida6a59mesesC2 = inputTarget.dataset.proporcaodesaida6a59mesesc2;
-            let proporcaoDeSaida6a59mesesC2Output = document.querySelector(`.${inputTarget.dataset.proporcaodesaida6a59mesesc2output}`);      
-            proporcaoDeSaida6a59mesesC2Output.value = this.calcularProporcaoDeSaida(proporcaoDeSaida6a59mesesC2);
+            let proporcaoDeSaidasC2 = inputTarget.dataset.proporcaodesaidasc2;
+            let proporcaoDeSaidasC2Output = document.querySelector(`.${inputTarget.dataset.proporcaodesaidasc2output}`);      
+            proporcaoDeSaidasC2Output.value = this.calcularProporcaoDeSaida(proporcaoDeSaidasC2);
 
-            let proporcaoDeSaida6a59mesesC3 = inputTarget.dataset.proporcaodesaida6a59mesesc3;
-            let proporcaoDeSaida6a59mesesC3Output = document.querySelector(`.${inputTarget.dataset.proporcaodesaida6a59mesesc3output}`);      
-            proporcaoDeSaida6a59mesesC3Output.value = this.calcularProporcaoDeSaida(proporcaoDeSaida6a59mesesC3);
+            let proporcaoDeSaidasC3 = inputTarget.dataset.proporcaodesaidasc3;
+            let proporcaoDeSaidasC3Output = document.querySelector(`.${inputTarget.dataset.proporcaodesaidasc3output}`);      
+            proporcaoDeSaidasC3Output.value = this.calcularProporcaoDeSaida(proporcaoDeSaidasC3);
 
-            let proporcaoDeSaida6a59mesesC4 = inputTarget.dataset.proporcaodesaida6a59mesesc4;
-            let proporcaoDeSaida6a59mesesC4Output = document.querySelector(`.${inputTarget.dataset.proporcaodesaida6a59mesesc4output}`);      
-            proporcaoDeSaida6a59mesesC4Output.value = this.calcularProporcaoDeSaida(proporcaoDeSaida6a59mesesC4);
+            let proporcaoDeSaidasC4 = inputTarget.dataset.proporcaodesaidasc4;
+            let proporcaoDeSaidasC4Output = document.querySelector(`.${inputTarget.dataset.proporcaodesaidasc4output}`);      
+            proporcaoDeSaidasC4Output.value = this.calcularProporcaoDeSaida(proporcaoDeSaidasC4);
 
-            let proporcaoDeSaida6a59mesesC5 = inputTarget.dataset.proporcaodesaida6a59mesesc5;
-            let proporcaoDeSaida6a59mesesC5Output = document.querySelector(`.${inputTarget.dataset.proporcaodesaida6a59mesesc5output}`);      
-            proporcaoDeSaida6a59mesesC5Output.value = this.calcularProporcaoDeSaida(proporcaoDeSaida6a59mesesC5);
+            let proporcaoDeSaidasC5 = inputTarget.dataset.proporcaodesaidasc5;
+            let proporcaoDeSaidasC5Output = document.querySelector(`.${inputTarget.dataset.proporcaodesaidasc5output}`);      
+            proporcaoDeSaidasC5Output.value = this.calcularProporcaoDeSaida(proporcaoDeSaidasC5);
         }
 
         // total de pacientesquetransitam
@@ -128,15 +128,15 @@ const totalizador = {
         let saida = document.querySelector(`.${classeDesaida}`);
         let totalDeSaidas = document.querySelector(`.${classeDetotalDeSaidas}`);
 
-        let proporcaoDeSaida = saida.value / totalDeSaidas.value * 100;
+        let proporcaoDeSaidas = saida.value / totalDeSaidas.value * 100;
 
-        if(isNaN(proporcaoDeSaida)) proporcaoDeSaida = 0;
+        if(isNaN(proporcaoDeSaidas)) proporcaoDeSaidas = 0;
 
-        if(parseInt(proporcaoDeSaida) !== parseFloat(proporcaoDeSaida)) {
-            proporcaoDeSaida = proporcaoDeSaida.toFixed(1)
+        if(parseInt(proporcaoDeSaidas) !== parseFloat(proporcaoDeSaidas)) {
+            proporcaoDeSaidas = proporcaoDeSaidas.toFixed(1)
         }
 
-        return proporcaoDeSaida + "%";
+        return proporcaoDeSaidas + "%";
     }
 }
 

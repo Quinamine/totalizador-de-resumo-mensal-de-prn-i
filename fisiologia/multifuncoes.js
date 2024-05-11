@@ -40,7 +40,10 @@ function destacarCelulasSaturadas() {
         if(c.value.length > 9) {
             c.classList.add("celula-saturada");
             celulasSaturadas++;
-        }
+            if(c.hasAttribute("readonly") && c.value.length < 18) {
+                c.classList.remove("celula-saturada")
+            }
+        } 
     }
     
     if(celulasSaturadas > 0) {
