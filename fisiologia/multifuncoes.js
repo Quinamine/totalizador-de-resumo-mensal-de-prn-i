@@ -83,13 +83,14 @@ function actualizarAno() {
     currentYearOutput.textContent = anoActual;
 }
 
-function sugerMesActual() {
+function sugerirMesEAnoActual() {
     const mesDatalist = document.getElementById("datalist-meses");
     const meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
     const tempo = new Date();
     let mesIndex = tempo.getMonth();
+    let anoActual = tempo.getFullYear();
 
-    mesDatalist.innerHTML = `<option value="${meses[mesIndex]}"></option>`;
+    mesDatalist.innerHTML = `<option value="${meses[mesIndex]}/${anoActual}"></option>`;
 }
 
 function formatarNumeros() {
@@ -138,7 +139,7 @@ window.addEventListener("load", () => {
 
     // Actualizar o ano 
     actualizarAno();
-    sugerMesActual();
+    sugerirMesEAnoActual();
     formatarNumeros();
 
     // Animar Janela Aberta
