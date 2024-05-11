@@ -17,6 +17,7 @@
     display: block;
     text-align: center;
     font-weight: 700;
+    line-height: 1.2;
 }
 
 .ficha__titulo {
@@ -55,6 +56,7 @@
     border-bottom: 2px solid transparent;
     min-height: 28px;
     font-size: 13.5px;
+    text-align: left;
 }
 
 .ficha__body__header {
@@ -165,10 +167,6 @@
     background-color: inherit;
 }
 
-.--destaque-padrao {
-    background-color: var(--gray--d);
-}
-
 .ficha__rodape__grid-template-cols-6 {
     width: 1015px;
     display: grid;
@@ -182,4 +180,13 @@
     justify-content: flex-end;
     align-items: center;
     padding: 4px;
+}
+
+/* REUTILIZAVEL */
+.--destaque-padrao {
+    background-color: var(--gray--d);
+}
+
+.--display-none {
+    display: none;
 }

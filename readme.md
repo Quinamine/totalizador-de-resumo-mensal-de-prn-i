@@ -2,27 +2,25 @@
 
 ![Trecho do Totalizador do Resumo Mensal de PRN I](imagens/totalizador-de-resumo-mensal-de-prn-i.png)
 
-O **Totalizador de Resumo Mensal de PRN I** é um serviço online gratuito que auxilia na elaboração, como o nome sugere, do resumo mensal de PRN I (Programa de Reabilitação Nutricional para Crianças dos 6 aos 14 anos), por meio do cálculo automático dos totais com base nos dados preenchidos pelo usuário. Foi criado de acordo com o modelo da ficha de resumo mensal de PRN I actualmente vigente no Serviço Nacional de Saúde em Moçambique.
+O **Totalizador de Resumo Mensal de PRN I** é um serviço online gratuito que auxilia na elaboração, como o nome sugere, do resumo mensal de PRN I (Programa de Reabilitação Nutricional para Crianças dos 6 meses aos 14 anos), por meio do cálculo automático dos totais com base nos dados preenchidos pelo usuário. Foi criado de acordo com o modelo da ficha de resumo mensal de PRN I actualmente vigente no Serviço Nacional de Saúde em Moçambique.
 
 
 ## Objectivos
 
-* Calcular correcta e automaticamente os totais;
+* Auxiliar os Profissionais de Saúde na totalização do resumo mensal de PRN I com exatidão e prontidão;
 
-* Preencher automaticamente os totais nas células correspondentes;
-
-* Minimizar possíveis erros de totalização, sobretudo por confusão (por exemplo, somar inadvertidamente células não correspondentes ou registar o total da linha A, na linha B);
+* Minimizar possíveis erros de totalização (por exemplo, somar inconscientemente células não correspondentes ou registar o total da linha A, na linha B);
 
 * Expandir o acesso à ficha de resumo mensal de PRN I.
 
 
 ## O que eu preciso dispor para, e como utilizar o totalizador?
 
-* Um telemóvel ou computador com acesso à internet.
+* Um celular ou computador com acesso à internet.
 
-* Ter colhido os dados de todos os indicadores da ficha nas fontes primárias (livro(s) de registo de PRN para pacientes dos 0 aos 14 anos) da sua Unidade Sanitária.
+* Ter colhido os dados de todos os indicadores da ficha nas fontes primárias (livro(s) de registo de PRN para pacientes dos 6 meses aos 14 anos) da sua Unidade Sanitária.
 
-* E por fim, preencher os dados nas células correspondentes em função das variáveis (indicador, sexo e faixa etária), e consequentemente os respectivos totais são, em tempo real, correcta e automaticamente calculados.
+* E por fim, preencher os dados nas células correspondentes em função das variáveis (indicador e faixa etária), e consequentemente os respectivos totais são, em tempo real, correcta e automaticamente calculados.
 
 
 >[!NOTE]

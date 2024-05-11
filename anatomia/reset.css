@@ -92,6 +92,6 @@ img {
 
 ::selection {
     background-color: var(--cor-primaria);
-    color: var(--cor-de-texto)
+    color: var(--cor-de-texto);
 }
 
