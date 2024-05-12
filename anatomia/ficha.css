@@ -122,7 +122,7 @@
     padding: 4px;
 }
 
-.ficha__body__body {
+.grid-default {
     display: grid;
     grid-template-columns: 175px repeat(4, 75px) 138px repeat(4,75px) 100px repeat(2,140px);
 }
@@ -193,6 +193,3 @@
     background-color: var(--gray--d);
 }
 
-.--display-none {
-    display: none;
-}

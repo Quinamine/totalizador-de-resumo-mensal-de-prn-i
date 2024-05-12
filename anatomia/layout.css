@@ -356,19 +356,15 @@ input[data-totaleixoy]:focus,
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: var(--blue--light);
+    background-color: var(--black--alpha-8);
     z-index: 999;
 }
 
-@media print {
-    .reference-container {
-        display: none;
-    }
-}
+
 
 .reference-row {
     display: grid;
-    grid-template-columns: 53px 500px 68px 99px 33px 102px;
+    grid-template-columns: 36px 114px 46px 392px;
     align-items: center;
     min-height: 28px;
     font-size: 12px;
@@ -391,7 +387,7 @@ input[data-totaleixoy]:focus,
 
 @media screen and (max-width: 630px) {
     .reference-row {
-        grid-template-columns: 1fr 58px 70px;
+        grid-template-columns: 114px 1fr;
         grid-column-gap: 3px;
         padding-left: 0;
         padding-right: 0;
@@ -972,6 +968,10 @@ details mark {
 }
 
 /* Classes Reutilizaveis */
+.celula-n-a {
+    background-color: var(--fullblack);
+}
+
 .--display-flex-xy-center {
     display: flex;
     justify-content: center;
@@ -1028,6 +1028,6 @@ details mark {
     font-weight: bold;
 }
 
-.celula-n-a {
-    background-color: var(--cor-de-texto) !important;
+.--display-none {
+    display: none;
 }
