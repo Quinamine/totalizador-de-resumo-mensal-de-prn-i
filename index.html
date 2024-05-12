@@ -87,7 +87,8 @@
                         <div class="linha-de-endereco__col">
                             <div class="linha-de-endereco__col__subcol --border-b-thick">
                                 <label for=input-us>Nome da Unidade Sanitária:</label>
-                                <input id=input-us class="input-nao-celular --fw-700">
+                                <input id=input-us  list="datalist-us" class="input-nao-celular --fw-700">
+                                <datalist id="datalist-us"></datalist>
                             </div>
                             <div class="linha-de-endereco__col__subcol --border-b-thick">
                                 <label for=input-codigo-us>Código da Unidade Sanitária:</label>
@@ -95,7 +96,12 @@
                             </div>
                             <div class="linha-de-endereco__col__subcol --border-b-thick">
                                 <label for=input-sector>Nome do Sector da Unidade Sanitária:</label>
-                                <input id=input-sector class="input-nao-celular --fw-700">
+                                <input id=input-sector list="datalist-sectores" class="input-nao-celular --fw-700">
+                                <datalist id="datalist-sectores">
+                                    <option value="CCR"></option>
+                                    <option value="TARV"></option>
+                                    <option value="TB"></option>
+                                </datalist>
                             </div>
                             <div class="linha-de-endereco__col__subcol">
                                 <label for=input-data>Data do Relatório:</label>

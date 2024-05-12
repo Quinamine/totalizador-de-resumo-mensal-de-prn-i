@@ -225,7 +225,7 @@ main {
     }
 }
 
-input[data-totalgeraleixox]:focus,
+input[data-totaleixoy]:focus,
 .input-nao-celular:focus {
     border-bottom: 2px solid var(--blue);
 }

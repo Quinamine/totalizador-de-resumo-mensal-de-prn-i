@@ -5,6 +5,12 @@
     color: var(--gray--6);
 }
 
+@media print {
+    .ficha {
+        margin-top: 10px;
+    }
+}
+
 .ficha__linha-de-emblema {
     display: flex;
     justify-content: center;
