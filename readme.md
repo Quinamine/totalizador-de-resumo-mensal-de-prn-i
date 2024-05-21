@@ -20,7 +20,7 @@ O **Totalizador de Resumo Mensal de PRN I** é um serviço online gratuito que a
 
 * Ter colhido os dados de todos os indicadores da ficha nas fontes primárias (livro(s) de registo de PRN para pacientes dos 6 meses aos 14 anos) da sua Unidade Sanitária.
 
-* E por fim, preencher os dados nas células correspondentes em função das variáveis (indicador e faixa etária), e consequentemente os respectivos totais são, em tempo real, correcta e automaticamente calculados.
+* E por fim, preencher os dados nas células correspondentes em função das variáveis (indicador e faixa etária) e consequentemente os respectivos totais são, em tempo real, correcta e automaticamente calculados.
 
 
 >[!NOTE]

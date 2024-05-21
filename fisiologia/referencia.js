@@ -33,15 +33,15 @@ const referencia = {
 }
 
 function events() {
-    const gridInputs = document.querySelectorAll("[data-totaleixox]");
-    gridInputs.forEach( gi => {
-        gi.addEventListener("focus", () => {;
-            referencia.retornarColuna(gi);
-            referencia.retornarLinha(gi);
+    const inputsCelulares = document.querySelectorAll("[data-totaleixox]");
+    inputsCelulares.forEach( inputCelular => {
+        inputCelular.addEventListener("focus", () => {;
+            referencia.retornarColuna(inputCelular);
+            referencia.retornarLinha(inputCelular);
         });
     });
 
-    gridInputs.forEach( gi => gi.addEventListener("focusout", referencia.retornarVazio));
+    inputsCelulares.forEach( inputCelular => inputCelular.addEventListener("focusout", referencia.retornarVazio));
 }
 
 window.onload = events;

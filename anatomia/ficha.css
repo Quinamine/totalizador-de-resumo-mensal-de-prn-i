@@ -134,6 +134,19 @@
     overflow: hidden;
 }
 
+@media screen and (max-width: 1023px) {
+    .ficha__col--pos-sticky {
+        position: sticky;
+        left: -15px;
+        background-color: var(--gray--d);
+        z-index: 333;
+    }
+
+    .ficha__col-de-indicadores {
+        background-color: var(--yt);
+    }
+}
+
 .ficha__indicador {
     display: flex;
     align-items: center;

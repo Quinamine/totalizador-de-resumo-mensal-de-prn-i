@@ -2,21 +2,21 @@
 
 const backup = {
     saveGridInputs() {
-        const gridInputs = document.querySelectorAll("[data-totaleixoy]");
+        const inputsCelulares = document.querySelectorAll("[data-totaleixoy]");
 
-        for (let i = 0; i < gridInputs.length; i++) {
+        for (let i = 0; i < inputsCelulares.length; i++) {
             
-            gridInputs[i].addEventListener("input", () => {
-                localStorage.setItem(`${keyPrefix}-input${i}`, gridInputs[i].value);
+            inputsCelulares[i].addEventListener("input", () => {
+                localStorage.setItem(`${keyPrefix}-input${i}`, inputsCelulares[i].value);
             });
-            gridInputs[i].value = localStorage.getItem(`${keyPrefix}-input${i}`);
+            inputsCelulares[i].value = localStorage.getItem(`${keyPrefix}-input${i}`);
         }
         
     },
     
     saveExtraInputs() {
-        const extraInputs = document.querySelectorAll(".input-nao-celular");
-        extraInputs.forEach( extraInput => {
+        const inputsNaoCelulares = document.querySelectorAll(".input-nao-celular");
+        inputsNaoCelulares.forEach( extraInput => {
             extraInput.addEventListener("input", () => localStorage.setItem(`${keyPrefix}-${extraInput.id}`, extraInput.value));
             extraInput.value = localStorage.getItem(`${keyPrefix}-${extraInput.id}`);
         });
@@ -25,39 +25,62 @@ const backup = {
 
 const totalizador = {
     filtrarEtotalizarCelulas(inputTarget) {
-        inputTarget.classList.add(`${inputTarget.dataset.subtotaleixoy}`);
-        inputTarget.classList.add(`${inputTarget.dataset.totaleixoy}`);
-
+   
         //subtotal eixo y
-        const subtotalEixoy = document.querySelectorAll(`.${inputTarget.dataset.subtotaleixoy}`);
-        const subtotalEixoyOutput = document.querySelector(`.${inputTarget.dataset.subtotaleixoyoutput}`);
-        subtotalEixoyOutput.value = this.somar(subtotalEixoy);  
+        let classNameDosOperandos = inputTarget.dataset.subtotaleixoy;
+        inputTarget.classList.add(`${classNameDosOperandos}`);
+
+        let operandos = document.querySelectorAll(`.${classNameDosOperandos}`);
+        let celulaDeSaida = document.querySelector(`.${inputTarget.dataset.subtotaleixoyoutput}`);
+        celulaDeSaida.value = this.somar(operandos);  
 
         //total eixo y
-        const totalEixoy = document.querySelectorAll(`.${inputTarget.dataset.totaleixoy}`);
-        const totalEixoyOutput = document.querySelector(`.${inputTarget.dataset.totaleixoyoutput}`);
-        totalEixoyOutput.value = this.somar(totalEixoy);  
+        classNameDosOperandos = inputTarget.dataset.totaleixoy;
+        inputTarget.classList.add(`${classNameDosOperandos}`);
+
+        operandos = document.querySelectorAll(`.${classNameDosOperandos}`);
+        celulaDeSaida = document.querySelector(`.${inputTarget.dataset.totaleixoyoutput}`);
+        celulaDeSaida.value = this.somar(operandos);  
+
+        // total de pacientesquetransitam
+        classNameDosOperandos = inputTarget.dataset.subtotalquetransitam;
+        celulaDeSaida = document.querySelector(`.${inputTarget.dataset.subtotalquetransitamoutput}`);
+        celulaDeSaida.value = this.totalizarPacientesQueTransitam(classNameDosOperandos);
+
+        classNameDosOperandos = inputTarget.dataset.totalquetransitam;
+        celulaDeSaida = document.querySelector(`.${inputTarget.dataset.totalquetransitamoutput}`);
+        celulaDeSaida.value = this.totalizarPacientesQueTransitam(classNameDosOperandos); 
+
+        classNameDosOperandos = inputTarget.dataset.totalgeralquetransitam;
+        celulaDeSaida = document.querySelector(`.${inputTarget.dataset.totalgeralquetransitamoutput}`);
+        celulaDeSaida.value = this.totalizarPacientesQueTransitam(classNameDosOperandos);
 
         if(inputTarget.dataset.subtotaleixox) {
-            inputTarget.classList.add(`${inputTarget.dataset.subtotaleixox}`);
+            classNameDosOperandos = inputTarget.dataset.subtotaleixox;
+            inputTarget.classList.add(`${classNameDosOperandos}`);
+
             //subtotal eixo x
-            const subsubtotalEixox = document.querySelectorAll(`.${inputTarget.dataset.subtotaleixox}`);
-            const subsubtotalEixoxOutput = document.querySelector(`.${inputTarget.dataset.subtotaleixoxoutput}`);
-            subsubtotalEixoxOutput.value = this.somar(subsubtotalEixox); 
+            operandos = document.querySelectorAll(`.${classNameDosOperandos}`);
+            celulaDeSaida = document.querySelector(`.${inputTarget.dataset.subtotaleixoxoutput}`);
+            celulaDeSaida.value = this.somar(operandos); 
         }
 
         if(inputTarget.dataset.totaleixox) {
-            inputTarget.classList.add(`${inputTarget.dataset.totaleixox}`);
-            const totalEixox = document.querySelectorAll(`.${inputTarget.dataset.totaleixox}`);
-            const totalEixoxOutput = document.querySelector(`.${inputTarget.dataset.totaleixoxoutput}`);
-            totalEixoxOutput.value = this.somar(totalEixox); 
+            classNameDosOperandos = inputTarget.dataset.totaleixox;
+            inputTarget.classList.add(`${classNameDosOperandos}`);
+
+            operandos = document.querySelectorAll(`.${classNameDosOperandos}`);
+            celulaDeSaida = document.querySelector(`.${inputTarget.dataset.totaleixoxoutput}`);
+            celulaDeSaida.value = this.somar(operandos); 
         }
 
         if(inputTarget.dataset.totalgeral) {
-            inputTarget.classList.add(`${inputTarget.dataset.totalgeral}`);
-            const totalGeral = document.querySelectorAll(`.${inputTarget.dataset.totalgeral}`);
-            const totalGeralOutput = document.querySelector(`.${inputTarget.dataset.totalgeraloutput}`);
-            totalGeralOutput.value = this.somar(totalGeral); 
+            classNameDosOperandos = inputTarget.dataset.totalgeral;
+            inputTarget.classList.add(`${classNameDosOperandos}`);
+
+            operandos = document.querySelectorAll(`.${classNameDosOperandos}`);
+            celulaDeSaida = document.querySelector(`.${inputTarget.dataset.totalgeraloutput}`);
+            celulaDeSaida.value = this.somar(operandos); 
         }
 
         if(inputTarget.dataset.proporcaodesaidasc1) {
@@ -82,18 +105,6 @@ const totalizador = {
             proporcaoDeSaidasC5Output.value = this.calcularProporcaoDeSaida(proporcaoDeSaidasC5);
         }
 
-        // total de pacientesquetransitam
-        let subtotalAmaisBmenosC = inputTarget.dataset.subtotalquetransitam;
-        const subtotalQueTransitamOutput = document.querySelector(`.${inputTarget.dataset.subtotalquetransitamoutput}`);
-        subtotalQueTransitamOutput.value = this.totalizarPacientesQueTransitam(subtotalAmaisBmenosC);
-
-       let totalAmaisBmenosC = inputTarget.dataset.totalquetransitam;
-        const totalDeTransicoesOutput = document.querySelector(`.${inputTarget.dataset.totalquetransitamoutput}`);
-        totalDeTransicoesOutput.value = this.totalizarPacientesQueTransitam(totalAmaisBmenosC); 
-
-        let totalGeralAmaisBmenosC = inputTarget.dataset.totalgeralquetransitam;
-        const totalGeralQuetransitamOutput = document.querySelector(`.${inputTarget.dataset.totalgeralquetransitamoutput}`);
-        totalGeralQuetransitamOutput.value = this.totalizarPacientesQueTransitam(totalGeralAmaisBmenosC);
     },
 
     somar(celulasPorTotalizar) {
@@ -104,19 +115,19 @@ const totalizador = {
         return soma;
     },
 
-    totalizarPacientesQueTransitam(aMaisBmenosC) {
+    totalizarPacientesQueTransitam(classNameDosOperandos) {
         // la+lb-menos-lc
 
-        let bmenosC = aMaisBmenosC.split("+")[1];
-        let classeDeA = aMaisBmenosC.split("+")[0];
-        let classeDeB = bmenosC.split("-menos-")[0];
-        let classeDeC = bmenosC.split("-menos-")[1];
+        let classNameDeOperandoA = classNameDosOperandos.split("+")[0];
+        let classNameDeOperandoBmenosC = classNameDosOperandos.split("+")[1];
+        let classeNameDeOperandoB = classNameDeOperandoBmenosC.split("-menos-")[0];
+        let classeNameDeOperandoC = classNameDeOperandoBmenosC.split("-menos-")[1];
         
-        const a = document.querySelector(`.${classeDeA}`);
-        const b = document.querySelector(`.${classeDeB}`);
-        const c = document.querySelector(`.${classeDeC}`);
+        const operandoA = document.querySelector(`.${classNameDeOperandoA}`);
+        const operandoB = document.querySelector(`.${classeNameDeOperandoB}`);
+        const operandoC = document.querySelector(`.${classeNameDeOperandoC}`);
         
-        let total = Number(a.value) + Number(b.value) - Number(c.value);
+        let total = Number(operandoA.value) + Number(operandoB.value) - Number(operandoC.value);
         return total;
        
     },
@@ -142,12 +153,12 @@ const totalizador = {
 
 
 function escutarEventos() {
-    const gridInputs = document.querySelectorAll("[data-totaleixoy]");
-    gridInputs.forEach( gi => {
-        gi.addEventListener("input", () => {
-            totalizador.filtrarEtotalizarCelulas(gi);
+    const inputsCelulares = document.querySelectorAll("[data-totaleixoy]");
+    inputsCelulares.forEach( inputCelular => {
+        inputCelular.addEventListener("input", () => {
+            totalizador.filtrarEtotalizarCelulas(inputCelular);
         });
-        gi.value !== "" && totalizador.filtrarEtotalizarCelulas(gi);
+        inputCelular.value !== "" && totalizador.filtrarEtotalizarCelulas(inputCelular);
     });
 }
 

@@ -133,10 +133,10 @@
                 </header>
                 <div class=ficha__body>
                     <header class="ficha__body__header --destaque-padrao --border-thick">
-                        <div class="body__header__col">
+                        <div class="body__header__col ficha__col--pos-sticky --border-r-thick">
                             <span>Grupos etários</span>
                         </div>
-                        <div class="body__header__col --border-l-thick">
+                        <div class="body__header__col">
                             <span>
                                 Doentes <br>
                                 no Início <br> do mês <br> (A)
@@ -218,7 +218,7 @@
                         </div>
                     </header>
                     <div class="grid-default --border-l-thick --border-r-thick --border-b">
-                        <div class="ficha__col-de-indicadores">
+                        <div class="ficha__col-de-indicadores ficha__col--pos-sticky  --border-r-thick">
                             <span class="ficha__indicador ficha__indicador--before-1 --border-b-thick">6-59 meses DAG</span>
                             <span class="ficha__indicador ficha__indicador--before-2 --border-b-thick">6-59 meses DAM</span>
                             <span class="ficha__indicador --border-b-thick">Sub-total 6-59 meses</span>
@@ -227,7 +227,7 @@
                             <span class="ficha__indicador --border-b-thick">Sub-total 5-14 anos</span>
                             <span class="ficha__indicador --border-b-thick">TOTAL</span>
                         </div>
-                        <div class="ficha__col-de-inputs --destaque-padrao --border-l-thick" data-col="Doentes no início do mês (A)">
+                        <div class="ficha__col-de-inputs --destaque-padrao" data-col="Doentes no início do mês (A)">
                             <input type=number min=0 class=l1-ca data-subtotaleixoy=l1l2-ca data-subtotaleixoyoutput=l3-ca data-subtotalquetransitam=l3-ca+l3-cb-menos-l3-colc data-subtotalquetransitamoutput=l3-cd data-totaleixoy=l1-a-l5-ca data-totaleixoyoutput=total-ca data-totalgeralquetransitam=total-ca+l7-cb-menos-l7-colc data-totalgeralquetransitamoutput=l7-cd data-totalquetransitam=l1-ca+l1-cb-menos-l1-colc data-totalquetransitamoutput=l1-cd>
                             <input type=number min=0 class=l2-ca data-subtotaleixoy=l1l2-ca data-subtotaleixoyoutput=l3-ca data-subtotalquetransitam=l3-ca+l3-cb-menos-l3-colc data-subtotalquetransitamoutput=l3-cd data-totaleixoy=l1-a-l5-ca data-totaleixoyoutput=total-ca data-totalgeralquetransitam=total-ca+l7-cb-menos-l7-colc data-totalgeralquetransitamoutput=l7-cd data-totalquetransitam=l2-ca+l2-cb-menos-l2-colc data-totalquetransitamoutput=l2-cd>
                             <input type=number min=0 readonly class=l3-ca>
@@ -375,7 +375,7 @@
                     <output class="reference-row__output reference-row__output--linha --display-flex-y-center"></output>
 
                     <span class="reference-row__label">Coluna:</span> 
-                    <output class="reference-row__output reference-row__output--coluna --display-flex-y-center --fw-700"></output>
+                    <output class="reference-row__output reference-row__output--coluna --display-flex-y-center"></output>
                 </div>
             </div>
         </main>
@@ -402,8 +402,8 @@
             </div>
 
             <div class="dialog-box-ir-para --display-flex-y-center">
-                <input type=number min=1 class=dialog-box-ir-para__input-linha max=63 placeholder="Ir para a linha (número da linha)">
-                <button class=dialog-box-ir-para__btn-fechar title=Fechar>×</button>
+                <input type=number min=1 class=dialog-box-ir-para__input-linha max=4 placeholder="Ir para a linha (número da linha)">
+                <button class="dialog-box-ir-para__btn dialog-box-ir-para__btn--fechar" title=Fechar>&times;</button>
             </div>
             <div class="dialog-box-esvaziar-ficha">
                 <h3 class="dialog-box-esvaziar-ficha__titulo --fw-700">Esvaziar ficha</h3>
@@ -419,7 +419,7 @@
                     </svg>
                     <p class="dialog-box-esvaziar-ficha__last-p">Esta acção não pode ser desfeita.
                 </div>
-                <h4 class="dialog-box-esvaziar-ficha__titulo --fw-700">Dados adicionais</h4>
+                <h4 class="dialog-box-esvaziar-ficha__titulo --fw-700">Incluindo:</h4>
                 <ul class=dialog-box-esvaziar-ficha__ul-dados-adicionais>
                     <li>
                         <input type=checkbox checked id="checkbox-us" data-for=input-us>
@@ -465,7 +465,7 @@
                 </figure>
                 
                 <p>
-                    O <b>Totalizador de Resumo Mensal de PRN I</b> é um serviço online gratuito que auxilia na elaboração, como o nome sugere, do resumo mensal de PRN I (Programa de Reabilitação Nutricional para Crianças dos 6 meses aos 14 anos), por meio do cálculo automático dos totais com base nos dados preenchidos pelo usuário. Foi criado de acordo com o modelo da ficha de resumo mensal de PRN I actualmente vigente no Serviço Nacional de Saúde em Moçambique.
+                    O <strong>Totalizador de Resumo Mensal de PRN I</strong> é um serviço online gratuito que auxilia na elaboração, como o nome sugere, do resumo mensal de PRN I (Programa de Reabilitação Nutricional para Crianças dos 6 meses aos 14 anos), por meio do cálculo automático dos totais com base nos dados preenchidos pelo usuário. Foi criado de acordo com o modelo da ficha de resumo mensal de PRN I actualmente vigente no Serviço Nacional de Saúde em Moçambique.
                 </p>
 
                 <h3 class="artigo__titulo artigo__titulo--nivel-2">Objectivos</h3>
@@ -481,7 +481,7 @@
                 <ul class="artigo__lista artigo__lista--ul">
                     <li>Um celular ou computador com acesso à internet.</li>
                     <li>Ter colhido os dados de todos os indicadores da ficha nas fontes primárias (livro(s) de registo de PRN para pacientes dos 6 meses aos 14 anos) da sua Unidade Sanitária.</li>
-                    <li>E por fim, preencher os dados nas células correspondentes em função das variáveis (indicador e faixa etária), e consequentemente os respectivos totais são, em tempo real, correcta e automaticamente calculados.</li>
+                    <li>E por fim, preencher os dados nas células correspondentes em função das variáveis (indicador e faixa etária) e consequentemente os respectivos totais são, em tempo real, correcta e automaticamente calculados.</li>
                 </ul>
 
                 <p class="artigo__p--destaque">A utilização do totalizador é, de facto, uma garantia de um resumo correctamente totalizado, porém, isso simplesmente não define a qualidade do resumo. Você é o único responsável pela veracidade, lógica e concordância dos dados preenchidos e, portanto, pela qualidade do resumo. O totalizador só se limita a calcular os totais baseando-se exactamente nos dados que você fornece.</p>
@@ -518,18 +518,18 @@
                 </details>
                 <details class="--display-none">
                     <summary >Ir para a linha...</summary>
-                    <p>Abre um campo no qual pode digitar um número de linha no intervalo de 1 à 63 e, uma vez digitado o número, a página rola até a linha correspondente ao número.</p>
+                    <p>Abre um campo no qual pode digitar um número de linha no intervalo de 1 à 4 e, uma vez digitado o número, a página rola até a linha correspondente ao número.</p>
                 </details>
                 <details>
                     <summary>Esvaziar ficha</summary>
-                    <p>Comando para limpar as células da ficha após a confirmação da acção na caixa de diálogo que abre.</p>
+                    <p>Comando para limpar a ficha após a confirmação da acção na caixa de diálogo que abre.</p>
                     
-                    <p>Permite também esvaziar campos adicionais (Província, Distrito, Nome da Unidade Sanitária, etc.) de forma seletiva. Para tal, na caixa de diálogo de confirmação, as "checkboxes" dos dados adicionais são, por padrão, marcadas com o sinal de "✔", indicando desse modo que o conteúdo contido nos respectivos campos será eliminado, mas caso queira manter a informação de um campo específico, basta desmarcá-lo clicando directamente sobre a ckeckbox ou sobre a sua descrição.</p> 
+                    <p class="artigo__p--destaque">Na sessão "Incluindo" da caixa de diálogo de confirmação, pode desmarcar campos (Província, Distrito, Nome da Unidade Sanitária, etc.) que não deseja excluir. Por padrão, as "checkboxes" dos campos estão marcadas com o sinal de "✔", indicando desse modo que o conteúdo contido neles será eliminado, mas caso queira manter a informação de um campo específico, basta desmarcá-lo clicando directamente sobre a ckeckbox ou sobre a sua descrição.</p> 
 
                     <figure class="details__moldura details__moldura--esvaziar-ficha">
                         <img src="imagens/caixa-de-dialogo-para-esvaziamento-da-ficha.png" alt="Caixa de diálogo para esvaziamento da ficha">
 
-                        <figcaption class="details__moldura__legenda"><b>Legenda:</b> Caixa de diálogo para esvaziamento da ficha. Neste caso, os campos de <b>Província, Nome, Código e Sector da Unidade Sanitária</b> seriam preservados (por ter suas checkboxes desmarcadas). Todos os outros cujas "checkboxes" estão marcadas, teriam seus campos esvaziados.</figcaption>
+                        <figcaption class="details__moldura__legenda"><b>Legenda:</b> Caixa de diálogo para esvaziamento da ficha. Neste caso, os campos de <b>Província, Nome, Código e Sector da Unidade Sanitária</b> seriam preservados (por ter suas checkboxes desmarcadas). Todos os outros cujas "checkboxes" estão marcadas seriam esvaziados.</figcaption>
                     </figure>
                 </details>
                 <details class="details-salvar-ficha-como-pdf">
@@ -566,7 +566,7 @@
                             <img src="imagens/salvar-ficha-como-pdf-2.png" alt="Como salvar a ficha em PDF no celular" class="artigo__img" />
                         </figure>
 
-                        <li>Por fim, clique no simbolo em forma de disquete e escolha um destino no seu celular para salvar o resumo.</li>
+                        <li>Por fim, toque no simbolo em forma de disquete e escolha um destino no seu celular para salvar o resumo.</li>
 
                         <figure class="details__moldura">
                             <img src="imagens/salvar-ficha-como-pdf-3.png" alt="Como salvar a ficha em PDF no celular" class="artigo__img"/>
@@ -575,9 +575,9 @@
                 </details>
                 <details class="artigo__details-motivo-de-red-cells">
                     <summary>Algumas células mudaram de cor de fundo para vermelho</summary>
-                    <p>As células do totalizador têm um tamanho para conter visivelmente 9 algarismos no máximo, isto é, mostram valores até, no máximo, <span class="number-format">999999999</span>. Quando a célula recebe um número com mais de 9 algarismos, dá um alerta ao usuário ficando vermelha e eventualmente mostrando esta mensagem de texto para alertá-lo sobre a omissão dos algarismos e o real motivo.</p>
+                    <p>As células do totalizador têm um tamanho para conter visivelmente 9 algarismos no máximo, isto é, mostram valores até, no máximo, <span class="number-format">999999999</span>. Quando uma célula recebe um número com mais de 9 algarismos, dá um alerta ficando vermelha e eventualmente mostrando esta mensagem de texto para alertá-lo sobre a omissão dos algarismos e o real motivo.</p>
 
-                    <p class="artigo__p artigo__p--destaque">Para um país como Moçambique, em que o número de habitantes é de pouco mais de 30 milhões (<a href="https://energypedia.info/wiki/Moçambique:_Informação_sobre_o_País" target="_blank">dados demográficos de 2019</a>), podemos presumir que nenhuma Unidade Sanitária actualmente tem um número mensal de dados de algum indicador, de qualquer que seja a sua natureza, acima de <span class="number-format">999999999</span>.</p>
+                    <p class="artigo__p artigo__p--destaque">Para um país como Moçambique, onde o número de habitantes é de pouco mais de 30 milhões (<a href="https://energypedia.info/wiki/Moçambique:_Informação_sobre_o_País" target="_blank">dados demográficos de 2019</a>), podemos presumir que nenhuma Unidade Sanitária actualmente tem um número mensal de dados de algum indicador, de qualquer que seja a sua natureza, acima de <span class="number-format">999999999</span>.</p>
                 </details>
                 <button class="artigo__btn-fechar artigo__btn-fechar--ajuda" title="Fechar">&times;</button>
             </article>
