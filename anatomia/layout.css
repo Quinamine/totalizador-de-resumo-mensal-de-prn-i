@@ -23,6 +23,7 @@
     --blue--light: #2573b5;
     --purple: rgb(116, 116, 235);
     --orange: #faa032;
+    --greenyellow:greenyellow;
     --brown: brown;
     --reference-bgc: var(--black--alpha-8);
 
@@ -30,7 +31,7 @@
     --layout-width: 1297px;
     --input-font-size: 14px;
     --thin-border-style: 1px solid var(--cor-de-borda);
-    --thick-border-style: 2px solid var(--cor-de-borda);
+    --border-style: 2px solid var(--cor-de-borda);
 }
 
 @media print {
@@ -225,6 +226,7 @@ main {
 input[data-totaleixoy]:focus,
 .input-nao-celular:focus {
     border-bottom: 2px solid var(--blue);
+    background-color: var(--greenyellow);
 }
 /* Campo de Nota */
 .main__container-de-campo-de-nota {
@@ -248,10 +250,12 @@ input[data-totaleixoy]:focus,
 .main__campo-de-nota {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.5;
-    width: 1003px;
+    width: 903px;
     padding: 5px;
-    border: var(--thick-border-style);
+    border: var(--border-style);
     font-size: 13.5px;
+    position: relative;
+    top: -84px;
 }
 
 .main__campo-de-nota:focus {
@@ -358,7 +362,7 @@ input[data-totaleixoy]:focus,
 
 .reference-row {
     display: grid;
-    grid-template-columns: 36px 114px 46px 392px;
+    grid-template-columns: 36px 135px 46px 392px;
     align-items: center;
     min-height: 28px;
     font-size: 12px;
@@ -385,6 +389,10 @@ input[data-totaleixoy]:focus,
         grid-column-gap: 3px;
         padding-left: 0;
         padding-right: 0;
+    }
+
+    .reference-row__output--indicador {
+        padding-left: 6px;
     }
 
     .reference-row__output {
@@ -982,44 +990,23 @@ details mark {
 }
 
 .--border {
-    border: var(--thick-borde-style);
+    border: var(--border-style);
 }
 
 .--border-t {
-    border-top: var(--thick-borde-style);
+    border-top: var(--border-style);
 }
 
 .--border-r {
-    border-right: var(--thick-borde-style);
+    border-right: var(--border-style);
 }
 
 .--border-b {
-    border-bottom: var(--thick-borde-style);
+    border-bottom: var(--border-style);
 }
 
 .--border-l {
-    border-left: var(--thick-borde-style);
-}
-
-
-.--border-thick {
-    border: var(--thick-border-style);
-}
-
-.--border-t-thick {
-    border-top: var(--thick-border-style);
-}
-
-.--border-r-thick {
-    border-right: var(--thick-border-style);
-}
-
-.--border-b-thick {
-    border-bottom: var(--thick-border-style);
-}
-
-.--border-l-thick {
-    border-left: var(--thick-border-style);
+    border-left: var(--border-style);
 }
 
 .--fw-700 {
