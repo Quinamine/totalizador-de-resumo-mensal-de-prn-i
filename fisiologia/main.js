@@ -2,7 +2,7 @@
 
 const backup = {
     saveGridInputs() {
-        const inputsCelulares = document.querySelectorAll("[data-totaleixoy]");
+        const inputsCelulares = document.querySelectorAll("[data-totaleixoy], .stock-de-atpu");
 
         for (let i = 0; i < inputsCelulares.length; i++) {
             

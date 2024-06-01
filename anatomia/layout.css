@@ -224,7 +224,8 @@ main {
 }
 
 input[data-totaleixoy]:focus,
-.input-nao-celular:focus {
+.input-nao-celular:focus,
+.stock-de-atpu:focus {
     border-bottom: 2px solid var(--blue);
     background-color: var(--greenyellow);
 }
@@ -876,11 +877,11 @@ details mark {
     margin-bottom: 10px;
 }
 
-.dialog-box-esvaziar-ficha p {
+.dialog-box-esvaziar-ficha__p--first {
     margin-bottom: 10px;
 }
 
-.dialog-box-esvaziar-ficha__last-p {
+.dialog-box-esvaziar-ficha__p--last {
     margin-top: 10px;
 }
 

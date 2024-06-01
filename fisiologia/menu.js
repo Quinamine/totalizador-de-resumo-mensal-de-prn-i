@@ -69,7 +69,7 @@ const menu = {
         return {  
             dialogBox: document.querySelector(".dialog-box-esvaziar-ficha"),
             abrirDialogBox() { 
-                const inputsDaFicha = document.querySelectorAll("[data-totaleixoy], [readonly], .input-nao-celular");
+                const inputsDaFicha = document.querySelectorAll(".ficha input");
 
                 let inputFilled = 0;
                 for(const input of inputsDaFicha) {
@@ -93,7 +93,7 @@ const menu = {
             },
 
             confirmar() {
-                const inputsCelulares  = document.querySelectorAll("[data-totaleixoy], [readonly], .ficha__rodape output");
+                const inputsCelulares  = document.querySelectorAll("[data-totaleixoy], [readonly], .stock-de-atpu, .ficha__rodape output");
                 const checkboxesParaInputsNaoCelulares = document.querySelectorAll("[data-for]");
        
                 for (let i = 0; i < inputsCelulares.length; i++) {
