@@ -238,7 +238,7 @@ function eventos() {
     const data = {
         title: "Totalizador de Resumo Mensal de PRN I",
         text: "O Totalizador de Resumo Mensal de PRN I é um serviço online gratuito que auxilia na elaboração, como o nome sugere, do resumo mensal de PRN I (Programa de Reabilitação Nutricional para Crianças dos 6 meses aos 14 anos), por meio do cálculo automático dos totais com base nos dados preenchidos pelo usuário. Foi criado de acordo com o modelo da ficha de resumo mensal de PRN I actualmente vigente no Serviço Nacional de Saúde em Moçambique.",
-        url: "https://quinamin.github.io/totalizador-de-resumo-mensal-de-prn-i/index.html"
+        url: "https://quinamine.github.io/totalizador-de-resumo-mensal-de-prn-i/index.html"
     }
 
     const btnPartilhar = document.querySelector(".header__menu__btn--partilhar");
