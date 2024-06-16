@@ -42,19 +42,6 @@ const totalizador = {
         celulaDeSaida = document.querySelector(`.${inputTarget.dataset.totaleixoyoutput}`);
         celulaDeSaida.value = this.somar(operandos);  
 
-        // total de pacientesquetransitam
-        classNameDosOperandos = inputTarget.dataset.subtotalquetransitam;
-        celulaDeSaida = document.querySelector(`.${inputTarget.dataset.subtotalquetransitamoutput}`);
-        celulaDeSaida.value = this.totalizarPacientesQueTransitam(classNameDosOperandos);
-
-        classNameDosOperandos = inputTarget.dataset.totalquetransitam;
-        celulaDeSaida = document.querySelector(`.${inputTarget.dataset.totalquetransitamoutput}`);
-        celulaDeSaida.value = this.totalizarPacientesQueTransitam(classNameDosOperandos); 
-
-        classNameDosOperandos = inputTarget.dataset.totalgeralquetransitam;
-        celulaDeSaida = document.querySelector(`.${inputTarget.dataset.totalgeralquetransitamoutput}`);
-        celulaDeSaida.value = this.totalizarPacientesQueTransitam(classNameDosOperandos);
-
         if(inputTarget.dataset.subtotaleixox) {
             classNameDosOperandos = inputTarget.dataset.subtotaleixox;
             inputTarget.classList.add(`${classNameDosOperandos}`);
@@ -105,6 +92,24 @@ const totalizador = {
             proporcaoDeSaidasC5Output.value = this.calcularProporcaoDeSaida(proporcaoDeSaidasC5);
         }
 
+        if(inputTarget.dataset.totalquetransitam) {
+            let classDosOperandos = inputTarget.dataset.totalquetransitam;
+            let totalOutput = document.querySelector(`.${inputTarget.dataset.totalquetransitamoutput}`);
+            totalOutput.value = this.totalizarPacientesQueTransitam(classDosOperandos)
+        }
+
+        if(inputTarget.dataset.subtotalquetransitam) {
+            let classDosOperandos = inputTarget.dataset.subtotalquetransitam;
+            let totalOutput = document.querySelector(`.${inputTarget.dataset.subtotalquetransitamoutput}`);
+            totalOutput.value = this.totalizarPacientesQueTransitam(classDosOperandos)
+        }
+
+        if(inputTarget.dataset.totalgeralquetransitam) {
+            let classDosOperandos = inputTarget.dataset.totalgeralquetransitam;
+            let totalOutput = document.querySelector(`.${inputTarget.dataset.totalgeralquetransitamoutput}`);
+            totalOutput.value = this.totalizarPacientesQueTransitam(classDosOperandos)
+        }
+
     },
 
     somar(celulasPorTotalizar) {
@@ -115,18 +120,17 @@ const totalizador = {
         return soma;
     },
 
-    totalizarPacientesQueTransitam(classNameDosOperandos) {
+    totalizarPacientesQueTransitam(classDosOperandos) {
         // la+lb-menos-lc
+        let classDeOperandoA = classDosOperandos.split("+")[0];
+        let operandoA = document.querySelector(`.${classDeOperandoA}`);
 
-        let classNameDeOperandoA = classNameDosOperandos.split("+")[0];
-        let classNameDeOperandoBmenosC = classNameDosOperandos.split("+")[1];
-        let classeNameDeOperandoB = classNameDeOperandoBmenosC.split("-menos-")[0];
-        let classeNameDeOperandoC = classNameDeOperandoBmenosC.split("-menos-")[1];
-        
-        const operandoA = document.querySelector(`.${classNameDeOperandoA}`);
-        const operandoB = document.querySelector(`.${classeNameDeOperandoB}`);
-        const operandoC = document.querySelector(`.${classeNameDeOperandoC}`);
-        
+        let classDeOperandoB = classDosOperandos.split("+")[1].split("-menos-")[0];
+        let operandoB = document.querySelector(`.${classDeOperandoB}`);
+
+        let classDeOperandoC = classDosOperandos.split("+")[1].split("-menos-")[1];
+        let operandoC = document.querySelector(`.${classDeOperandoC}`);
+
         let total = Number(operandoA.value) + Number(operandoB.value) - Number(operandoC.value);
         return total;
        
