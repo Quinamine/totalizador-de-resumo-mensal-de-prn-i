@@ -15,3 +15,7 @@
     background-color: transparent;
     color: #555;
 }
+
+.dialog-box-default--small.--open {
+    bottom: calc(50vh - 134px / 2);
+}
