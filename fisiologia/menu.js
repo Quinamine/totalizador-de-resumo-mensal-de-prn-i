@@ -28,7 +28,7 @@ const menu = {
             },
             goToLn(numLinha) {
                 if(numLinha < 1 || numLinha > 63) {
-                    const lnNoFound = "Nenhuma linha corresponde ao número digitado."
+                    const lnNoFound = "Sem correspondência."
                     alertarSobre(lnNoFound);
                     this.removeLnHighlight();
                 } else {
