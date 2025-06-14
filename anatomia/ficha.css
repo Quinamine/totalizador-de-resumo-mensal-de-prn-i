@@ -2,7 +2,7 @@
     width: var(--layout-width);
     margin: 30px auto 10px;
     font-size: 13.5px;
-    color: var(--gray--6);
+    color: var(--gray-six);
 }
 @media print {
     .ficha {
@@ -116,7 +116,7 @@
     .ficha__col--pos-sticky {
         position: sticky;
         left: -15px;
-        background-color: var(--gray--d);
+        background-color: var(--gray-d);
         z-index: 333;
     }
     .ficha__col-de-indicadores {
@@ -213,6 +213,6 @@
 }
 /* REUTILIZAVEL */
 .--destaque-padrao {
-    background-color: var(--gray--d);
+    background-color: var(--gray-d);
 }
 
