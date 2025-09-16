@@ -170,7 +170,7 @@ const moz = {
             codigos: ["01032302", "01032303", "01032304"]  
         },
         malema: {
-            us: ["CS Chuhulo", "CS Malema", "CS Murralelo", "CS Murripa", "CS Murumbo", "CS Mutuali", "CS Nakata", "CS Nataleia PS", "Cunvarre PS Nioce"],    
+            us: ["CS Chuhulo", "CS Malema", "CS Murralelo", "CS Murripa", "CS Murumbo", "CS Mutuali", "CS Nakata", "CS Nataleia", "PS Cunvarre", "PS Nioce"],    
             codigos: ["01030608", "01030606", "01030610", "01030611", "01030614", "01030607", "01030613", "01030612", "01030609", "01030615"]
         },
         meconta: {
@@ -245,7 +245,7 @@ const moz = {
             codigos: ["01040206", "01040299", "01040207", "01040208", "01040236", "01040216", "01040265", "01040211", "01040215", "01040212", "01040255", "01040213", "01040214", "01040237", "01040200", "01040256"]
         },
         chinde: {
-            us: ["CS Chinde - Sede", "CS Jorge", "CS Madal", "CS Matilde", "CS Micaune", "PS Centro Educacional", "PS Mitange"],
+            us: ["CS Chinde-Sede", "CS Jorge", "CS Madal", "CS Matilde", "CS Micaune", "PS Centro Educacional", "PS Mitange"],
             codigos: ["01040307", "01040313", "01040309", "01040310", "01040311", "01040316", "01040312"]
         },
         derre: {
@@ -408,7 +408,7 @@ const moz = {
             codigos: ["01060307", "01060306", "01060319", "01060309", "01060305", "01060313", "01060355", "01060300"]
         },
         guro: {
-            us: ["CS Bunga", "CS Chivuli", "CS Guro - Sede", "CS Mandie", "CS Massangano", "CS Mungari", "CS Nhamassonge", "CS Nhansana", "CS Nhaphungo", "CS Tchetcha", "CS Thanda"],
+            us: ["CS Bunga", "CS Chivuli", "CS Guro-Sede", "CS Mandie", "CS Massangano", "CS Mungari", "CS Nhamassonge", "CS Nhansana", "CS Nhaphungo", "CS Tchetcha", "CS Thanda"],
             codigos: ["01060406", "01060407", "01060408", "01060409", "01060411", "01060410", "01060412", "01060413", "01060103", "01060414", "01060415"]
         },
         macate: {
@@ -763,7 +763,7 @@ function preencherNid() {
     } else if (!notEmpty(inputUs)) inputNid.value = nidUs; 
 }
 function sugerirMesEanoActuais() {
-    const mesDatalist = document.getElementById("datalist-meses");
+    const mesDatalist = document.getElementById("datalist-mes-ano");
     const meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
     const tempo = new Date();
     let mesIndex = tempo.getMonth();
