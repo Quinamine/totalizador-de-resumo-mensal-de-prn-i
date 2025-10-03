@@ -2,7 +2,7 @@
 
 ![Trecho do Totalizador do Resumo Mensal de PRN I](imagens/totalizador-de-resumo-mensal-de-prn-i.png)
 
-O **Totalizador de Resumo Mensal de PRN I** é um serviço online gratuito que auxilia na elaboração, como o nome sugere, do resumo mensal de PRN I (Programa de Reabilitação Nutricional para Crianças dos 6 meses aos 14 anos) por meio do cálculo automático dos totais com base nos dados inseridos pelo usuário. Foi desenvolvido de acordo com o modelo da ficha de resumo mensal de PRN I actualmente vigente no Serviço Nacional de Saúde em Moçambique.
+O **Totalizador de Resumo Mensal de PRN I** é um serviço online gratuito, que auxilia na elaboração, como o nome sugere, do resumo mensal de PRN I (Programa de Reabilitação Nutricional para Crianças dos 6 meses aos 14 anos) por meio do cálculo automático dos totais com base nos dados inseridos pelo usuário. Foi desenvolvido de acordo com o modelo da ficha de resumo mensal de PRN I actualmente vigente no Serviço Nacional de Saúde em Moçambique.
 
 
 ## Objectivos
