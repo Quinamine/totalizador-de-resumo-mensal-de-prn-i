@@ -8,6 +8,14 @@
     .ficha {
         margin-top: 0px;
     }
+    .layout-row--obs {
+        min-width: initial;
+        margin: initial;
+        width: calc(var(--layout-width) - 280px);
+        position: relative;
+        top: -90px;
+        left: calc(50vw - var(--layout-width) / 2 - 8px);
+    }
 }
 .ficha__linha-de-emblema {
     display: flex;
